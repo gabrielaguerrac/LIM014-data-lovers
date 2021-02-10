@@ -1,12 +1,76 @@
+      
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <title>League of Legends</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale= 1.0, minimum-scale=1.00">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
+    <article class="flexBox">
+    
+      <header>
+      <section class="lolBtn"> 
+        <img id="lolIcon" src="imagenes/League_of_Legends_Icon.png" height="90px">
+      </section>
+
+      <nav section class="menu" id=principalNav> 
+        <a></a>
+        <a class="champions" id="champions">CAMPEONES  </a>
+        <a class="stadistics" id="stadistics">ESTADÍSTICAS  </a>
+        <a class="about" id="about">ACERCA DE</a>
+        <span class="hamburgerBtn">
+          <i class="fas fa-bars"></i> 
+        </span>
+      </nav>
+     </header>
+      <aside class="lolIcon"> 
+        <img id="lolIcon" src="imagenes/lol-logo-rendered-hi-res.png" height="380px">
+      </aside> 
+
+      <section class="download"> 
+       <a href="https://signup.euw.leagueoflegends.com/es/signup/index#/">DESCARGA EL JUEGO</a>
+      </section>
+     
+     
+      <article class="calling">
+
+      </article>
+    
+
+    <article class="championsPage">
+
+      <aside></aside>
+
+      <nav section class="championsMenu" id="secundaryNav"> 
+        <a></a>
+        <a id="all">TODOS</a>
+        <a id="assassin">ASESINO</a>
+        <a id="fighter">LUCHADOR</a>
+        <a id="mage">MAGO</a>
+        <a id="support">SOPORTE</a>
+        <a id="tank">TANQUE</a>
+        <a id="carry">TIRADOR</a> 
+          <select name="order" id="order">
+          <option disabled selected value= "-">Ordenar por</option>
+          <option value="aZ">A-Z</option>
+          <option value="zA">Z-A</option>
+          <option value="dificulty">Dificultad</option>
+          </select>
+        
+         <a>        
+          <i class="fas fa-search" id="glass"></i>
+          <input type="text" placeholder="Buscar..." name="search">
+        </a>
+        
+      </nav>
+
+      <!-- <hr> -->
+  </article>
+    <footer>™ & © 2021 Riot Games Inc. Todos los derechos reservados.</footer>
+  </article>
     <script src="main.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/b2d0f97688.js" crossorigin="anonymous"></script>
   </body>
 </html>
