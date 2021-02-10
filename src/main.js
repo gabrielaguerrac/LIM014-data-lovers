@@ -3,8 +3,17 @@
 //import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
-//console.log(example, data);
+import { example } from './data.js';
+ import data from './data/lol/lol.js';
 
-//jifjiifjfrj soy gabi 
+document.getElementById("principalNav").style.display= "block";
+document.getElementById("secundaryNav").style.display= "none";
+const showDataChamps = document.querySelector(" .calling");
 
-//holaaaa
+document.getElementById("champions").addEventListener("click", function() {
+    document.getElementById("secundaryNav").style.display= "block";
+    // document.getElementById("principalNav").style.display= "block";
+   const dataAllChampions = Object.values(data);
+   
+});
+console.log(data);
