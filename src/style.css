@@ -10,13 +10,12 @@
 
 body {
 background-image: url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg");
-/* width: 100%; */
-height: 100%;
+width: 100%;
 background-repeat: no-repeat;
 background-position: center;
 background-size: cover;
 background-attachment: fixed;
-background-color:black;
+background-color: black;
 /* max-width: 1500px; */
 /*margin: auto; */
 
@@ -37,27 +36,41 @@ header{
     align-items: center;
     flex-direction: row; /*coloca los elementos en fila*/
     flex-wrap: wrap; /*posiciona los elementos uno debajo de otro*/
+    
 }
 
 .menu {
     background: linear-gradient(to right,rgba(236, 187, 65, 0.932), rgba(245, 195, 70, 0.767), rgba(244, 189, 51, 0));
     color:white;
+    display: flex;
     justify-content: space-between;
-    align-items: center;
-    
-
+    /* align-items: center; */
     flex-grow: 1;  
+    background-size: 65% 200%;
+    background-repeat: no-repeat;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    
 }
 
-.menu a:hover, .championsMenu a:hover, .hamburgerBtn:hover, a:hover {
+.menu a:hover, .championsMenu a:hover, .hamburgerBtn:hover, .downloadGame:hover {
     color: #fff;
 	text-shadow:
 		0 0 8px rgb(0, 60, 255),
         0 0 10px rgba(0,178,255,1);
 }
 
-a {
- text-decoration: none;
+#logoLol {
+    padding-left: 7%;
+    height:420px;
+    padding-bottom: 6%;
+    margin-top: 10%;
+}
+
+#lolIcon{
+    height:90px;
+    cursor: pointer;
 }
 
 .championsMenu {
@@ -69,20 +82,27 @@ a {
     align-items:center;
     font-family: 'Crimson Text', serif;
     border-bottom: 3px solid rgb(207, 156, 26);
+
 }
 
-.download{
-    background: radial-gradient(rgb(20,118,94), rgba(6, 51, 110, 0.74), rgb(15,14,73));
-    background-color: rgb(12, 12, 51);
-    color:white;
+.downloadGame a{
+   
+    background-color: RGB(0, 198, 226);
+    color:black;
     justify-content: center;
     font-size: 20px;
-    border-style: solid;
-    border-color:rgba(255, 217, 0, 0.26);
+    /* border-style: solid; */
+    /* border-color:rgba(255, 217, 0, 0.26); */
     border-width: 5px;
     align-items: center;
+    text-decoration: black;
+    padding: 3%;
+    margin-left: 12%;
+    margin-bottom: 5%;
     
 }
+
+
 
 .championsMenu{
     background: transparent;
@@ -90,7 +110,7 @@ a {
     text-align: center;
     color:white;
     font-size: 25px;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items:center;
     font-family: 'Crimson Text', serif;
 }
@@ -110,40 +130,110 @@ a {
     
 }
 
-footer{
+/* footer{
     background-color: transparent;
+    display: block;
     color:white;
     font-size: 18px;
-    text-align: center;
+    text-align: left;
+    align-items: flex-end;
+    align-self: flex-end;
+    flex-direction: column;
+} */
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 4%;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    text-align: right;
+    padding-right: 3%;
 }
 
-@media (min-width: 481px) and (max-width: 767px)
-{
+.hamburgerBtn{
+    display: none;
+    
+}
+
+
+.page2-Champions{
+    background-image: url(imagenes/senna.jpg);
+    
+}
+
+.page3-Statistics{
+    background-image: url(imagenes/samira.jpg);
+    
+}
+
+.page4-InfoAbout{
+    background-image: url(imagenes/lucian.jpg);
+    
+}
+
+@media (min-width: 320px) and (max-width: 767px){
 
     body {
     background-image: url(imagenes/CaitlynCel.png);
-    background-color:black;
-}
+    }
     .menu{
         background: black;
         
     }
+
+    .logoLol, #logoLol{
+        width: 90%;
+        height: 60%;
+    }
+
+    .lolBtn, #lolIcon{
+        width: 40px;
+        height: 40px;
+    }
+
+    /* .hamburgerBtn{
+        display: block;
+        justify-content: flex-end;
+        display: flex;
+    } */
+
+    .menu, .hamburgerBtn{
+        display: block;
+        justify-content: flex-end;
+        display: flex;
+        text-align: right;
+        
+        
+    }
+
+    header{
+        background-color: black;
+        width: 100%;
+    }
+
+    .champions, .statistics, .about{
+        display: none;
+    }
+
+    
+
 }
-   /* width: 100%; */
-    /* height: 100%; */
-    /* background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed; */
+
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
     body {
         background-image: url(imagenes/CaitlynTablet.png);
-        /* width: 100%; */
-        /* height: 100%; */
-        /* background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed; */
-        background-color:black;} 
-  }
-    
+
+        background-color: black;
+    }
+
+    .logoLol, #logoLol{
+        width: 90%;
+        height: 60%;
+        display: flex;
+    }
+
+
+
+}
