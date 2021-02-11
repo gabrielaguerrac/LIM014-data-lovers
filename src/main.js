@@ -12,8 +12,9 @@ const showDataChamps = document.querySelector(" .calling");
 
 document.getElementById("champions").addEventListener("click", function() {
     document.getElementById("secundaryNav").style.display= "block";
-    // document.getElementById("principalNav").style.display= "block";
-   const dataAllChampions = Object.values(data);
+    document.getElementById("a").style.display= "none";
+    
+   //const dataAllChampions = Object.values(data);
    
 });
 console.log(data);
