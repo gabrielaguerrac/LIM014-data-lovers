@@ -130,24 +130,33 @@ header{
     
 }
 
-footer{
+/* footer{
     background-color: transparent;
-    display: flex;
+    display: block;
     color:white;
     font-size: 18px;
-    text-align: right;
+    text-align: left;
     align-items: flex-end;
     align-self: flex-end;
     flex-direction: column;
-    
-    
-    
-}
-#footer{
-    flex: 1;
-    flex-shrink: 0;
+} */
 
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 4%;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    text-align: right;
+    padding-right: 3%;
 }
+
+.hamburgerBtn{
+    display: none;
+    
+}
+
 
 .page2-Champions{
     background-image: url(imagenes/senna.jpg);
@@ -171,7 +180,44 @@ footer{
     }
     .menu{
         background: black;
+        
     }
+
+    .logoLol, #logoLol{
+        width: 90%;
+        height: 60%;
+    }
+
+    .lolBtn, #lolIcon{
+        width: 40px;
+        height: 40px;
+    }
+
+    /* .hamburgerBtn{
+        display: block;
+        justify-content: flex-end;
+        display: flex;
+    } */
+
+    .menu, .hamburgerBtn{
+        display: block;
+        justify-content: flex-end;
+        display: flex;
+        text-align: right;
+        
+        
+    }
+
+    header{
+        background-color: black;
+        width: 100%;
+    }
+
+    .champions, .statistics, .about{
+        display: none;
+    }
+
+    
 
 }
 
@@ -181,4 +227,13 @@ footer{
 
         background-color: black;
     }
+
+    .logoLol, #logoLol{
+        width: 90%;
+        height: 60%;
+        display: flex;
+    }
+
+
+
 }
