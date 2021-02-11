@@ -7,45 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale= 1.0, minimum-scale=1.00">
     <link rel="stylesheet" href="style.css" />
   </head>
-
-  <body>
-    <article class="flexBox">
+  <body id="body">
+   
     
       <header>
       <section class="lolBtn"> 
-        <img id="lolIcon" src="imagenes/League_of_Legends_Icon.png" height="90px">
-      </section>
+        <img id="lolIcon" src="imagenes/League_of_Legends_Icon.png" >
+      </section> <!-- La L dorada que indexa a la pag de inicio -->
 
-      <nav section class="menu" id=principalNav> 
-        <a></a>
-        <a class="champions" id="champions">CAMPEONES  </a>
-        <a class="stadistics" id="stadistics">ESTADÍSTICAS  </a>
-        <a class="about" id="about">ACERCA DE</a>
+      
+      <nav section class="menu" id="principalNav"> 
         <span class="hamburgerBtn">
           <i class="fas fa-bars"></i> 
         </span>
+        
+        <a class="champions" id="champions">CAMPEONES  </a>
+        <a class="statistics" id="statistics">ESTADÍSTICAS  </a>
+        <a class="about" id="about">ACERCA DE</a>
+        
       </nav>
+     </header> 
+      <aside class="logoLol" id="leagueOfLegends"> 
+        <img id="logoLol" src="imagenes/lol logo.png" >
+       <!-- El texto league of legends dorado -->
 
-     </header>
-      <aside class="lolIcon"> 
-        <img id="lolIcon" src="imagenes/lol-logo-rendered-hi-res.png" height="380px">
-      </aside> 
-
-      <section class="download"> 
-       <a href="https://signup.euw.leagueoflegends.com/es/signup/index#/">DESCARGA EL JUEGO</a>
-      </section>
-     
-     
-      <article class="calling">
-
-      </article>
+        <section class="downloadGame"> 
+        <a href="https://signup.euw.leagueoflegends.com/es/signup/index#/">DESCARGA EL JUEGO</a>
+        </section>
+      </aside>
     
 
     <article class="championsPage">
+      
 
-      <aside></aside>
-
-      <nav section class="championsMenu" id="secundaryNav"> 
+      <nav section class="championsMenu" id="secondaryNav"> 
         <a></a>
         <a id="all">TODOS</a>
         <a id="assassin">ASESINO</a>
@@ -68,10 +63,18 @@
         
       </nav>
 
+      <article class="calling">
+       
+      </article>
+
       <!-- <hr> -->
-  </article>
-    <footer>™ & © 2021 Riot Games Inc. Todos los derechos reservados.</footer>
-  </article>
+    </article> 
+
+
+  
+  <footer>™& © 2021 Riot Games Inc. Todos los derechos reservados.
+  </footer>
+
     <script src="main.js" type="module"></script>
     <script src="https://kit.fontawesome.com/b2d0f97688.js" crossorigin="anonymous"></script>
   </body>

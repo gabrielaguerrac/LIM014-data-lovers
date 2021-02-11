@@ -4,28 +4,52 @@
 // import data from './data/rickandmorty/rickandmorty.js';
 
 
+import { example } from './data.js';
 import data from './data/lol/lol.js';
 
 document.getElementById("principalNav").style.display= "block";
-document.getElementById("secundaryNav").style.display= "none";
-//const showDataChamps = document.querySelector(" .calling");
+document.getElementById("secondaryNav").style.display= "none";
+// const showDataChamps = document.querySelector(" .calling");
 
+//PARA EL CAMBIO DE PAGINA - AL DAR CLICK EN EL MENU DORADITO A CAMPEONES
 document.getElementById("champions").addEventListener("click", function() {
-    document.getElementById("secundaryNav").style.display= "block";
-    // document.getElementById("principalNav").style.display= "block";
+    document.getElementById("secondaryNav").style.display= "block";
+    document.getElementById("leagueOfLegends").style.display= "none";
+    document.getElementById("body").classList.add("page2-Champions");
+    document.getElementById("body").classList.remove("page3-Statistics");
+    document.getElementById("body").classList.remove("page4-InfoAbout");
    //const dataAllChampions = Object.values(data);
    
 });
-//console.log(data);
 
+//AL DAR CLICK EN ESTADISTICA CAMBIO IMAGEN FONDO ETC
+document.getElementById("statistics").addEventListener("click", function() {
+    document.getElementById("secondaryNav").style.display= "none";
+    document.getElementById("leagueOfLegends").style.display= "none";
+    document.getElementById("body").classList.add("page3-Statistics");
+    document.getElementById("body").classList.remove("page2-Champions");
+    document.getElementById("body").classList.remove("page4-InfoAbout");
 
-//1. LLAMAR MEDIANTE SEARCH 
-document.getElementById("glass").addEventListener("click", function() {
-    
-    let champSearch = document.getElementById("search").value;
-    let result1 
-    
-    = data.champSearch;
-
-    console.log(result)
+   //const dataAllChampions = Object.values(data);
+   
 });
+
+document.getElementById("about").addEventListener("click", function() {
+    document.getElementById("secondaryNav").style.display= "none";
+    document.getElementById("leagueOfLegends").style.display= "none";
+    document.getElementById("body").classList.add("page4-InfoAbout");
+    document.getElementById("body").classList.remove("page3-Statistics");
+    document.getElementById("body").classList.remove("page2-Champions");
+
+   //const dataAllChampions = Object.values(data);
+   
+});
+
+const reload = document.getElementById("lolIcon").addEventListener("click",
+function(){
+    location.reload();
+}
+)
+
+
+//console.log(data);
