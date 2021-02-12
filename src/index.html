@@ -19,6 +19,11 @@
       <nav section class="menu" id="principalNav"> 
         <span class="hamburgerBtn">
           <i class="fas fa-bars"></i> 
+          <ul class="menuCel" id="principalNavCel">
+            <a class="champions" id="champions">CAMPEONES  </a>
+            <a class="statistics" id="statistics">ESTADÍSTICAS  </a>
+            <a class="about" id="about">ACERCA DE</a>
+          </ul>
         </span>
         
         <li><a class="champions" id="champions">CAMPEONES  </a></li>
@@ -41,7 +46,7 @@
       
 
       <nav section class="championsMenu" id="secondaryNav"> 
-        <a></a>
+        
         <a id="all">TODOS</a>
         <a id="assassin">ASESINO</a>
         <a id="fighter">LUCHADOR</a>
@@ -62,10 +67,33 @@
         </a>
         
       </nav>
+      <label>BORRAR</label>
+      <nav section class="championsMenuCel" id="secondaryNavCel"> 
+        
+        <select name= "allRoles" id="allRoles">
+        <option value="allTheRoles">TODOS LOS ROLES</option>
+        <option value="assassin">ASESINO</option>
+        <option value="fighter">LUCHADOR</option>
+        <option value="mage">MAGO</option>
+        <option value="support">SOPORTE</option>
+        <option value="tank">TANQUE</option>
+        <option value="carry">TIRADOR</option>
+        </select>
+          <select name="orderCel" id="orderCel">
+          <option disabled selected value= "-">Ordenar por</option>
+          <option value="aZ">A-Z</option>
+          <option value="zA">Z-A</option>
+          <option value="dificulty">Dificultad</option>
+          </select>
+        
+         <a>        
+          <i class="fas fa-search" id="glassCel"></i>
+          <input type="text" placeholder="Buscar..." name="search">
+        </a>
+        
+      </nav>
 
-      <article class="calling">
-       
-      </article>
+
 
       <!-- <hr> -->
     </article> 
