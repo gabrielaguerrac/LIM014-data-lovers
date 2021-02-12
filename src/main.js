@@ -46,16 +46,16 @@ document.getElementById("about").addEventListener("click", function() {
 });
 
 
-
-document.getElementById("hamburgerBtn").addEventListener("click", function(){
-    document.getElementsByClassName("menuCel").style.display= 'block';
-})
-
 const reload = document.getElementById("lolIcon").addEventListener("click",
 function(){
     location.reload();
 }
 )
 
+//PARTE CELULAR
+
+document.querySelector(".fas fa-bars").addEventListener("click", function(){
+    document.getElementsByClassName("menuCel").style.display = "block";
+})
 
 //console.log(data);

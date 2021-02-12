@@ -168,7 +168,7 @@ footer{
     
 }
 
-.championsMenuCel, #secondaryNavCel{
+.championsMenuCel, #secondaryNavCel, .menuCel{
     display: none;
 }
 
@@ -218,9 +218,9 @@ footer{
         display: none;
     }
 
-    .championsMenuCel, #secondaryNavCel{
+    /* .championsMenuCel, #secondaryNavCel{
         display: block;
-    }
+    } */
 
     
 
