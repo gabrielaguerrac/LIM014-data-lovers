@@ -45,6 +45,12 @@ document.getElementById("about").addEventListener("click", function() {
    
 });
 
+
+
+document.getElementById("hamburgerBtn").addEventListener("click", function(){
+    document.getElementsByClassName("menuCel").style.display= 'block';
+})
+
 const reload = document.getElementById("lolIcon").addEventListener("click",
 function(){
     location.reload();
