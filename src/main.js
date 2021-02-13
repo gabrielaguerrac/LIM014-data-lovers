@@ -9,7 +9,7 @@ import data from './data/lol/lol.js';
 
 document.getElementById("principalNav").style.display= "block";
 document.getElementById("secondaryNav").style.display= "none";
-// const showDataChamps = document.querySelector(" .calling");
+
 
 //PARA EL CAMBIO DE PAGINA - AL DAR CLICK EN EL MENU DORADITO A CAMPEONES
 document.getElementById("champions").addEventListener("click", function() {
@@ -29,7 +29,6 @@ document.getElementById("statistics").addEventListener("click", function() {
     document.getElementById("body").classList.add("page3-Statistics");
     document.getElementById("body").classList.remove("page2-Champions");
     document.getElementById("body").classList.remove("page4-InfoAbout");
-
    //const dataAllChampions = Object.values(data);
    
 });
@@ -40,23 +39,30 @@ document.getElementById("about").addEventListener("click", function() {
     document.getElementById("body").classList.add("page4-InfoAbout");
     document.getElementById("body").classList.remove("page3-Statistics");
     document.getElementById("body").classList.remove("page2-Champions");
-
    //const dataAllChampions = Object.values(data);
    
 });
 
-
-const reload = document.getElementById("lolIcon").addEventListener("click",
+document.getElementById("lolIcon").addEventListener("click",
 function(){
     location.reload();
 }
 )
 
+// addEventListener("DOMContentLoaded", () => {
+//     const hamburgerBtn = document.querySelector(".hamburgerBtn")
+//     if (hamburgerBtn) {
+//         hamburgerBtn.addEventListener('click', () =>{
+//             const menuCel = document.querySelector(".menu");
+//             menuCel.classList.toggle("show")
+//         })
+//     }
+// }
 //PARTE CELULAR
 
-document.querySelector(".fas fa-bars").addEventListener("click", function(){
-    document.getElementsByClassName("menuCel").style.display = "block";
-})
+// document.querySelector(".fas fa-bars").addEventListener("click", function(){
+//     document.getElementsByClassName("menuCel").style.display = "block";
+// })
 
 
 //console.log(data);
