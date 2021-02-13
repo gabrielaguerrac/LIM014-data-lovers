@@ -58,4 +58,5 @@ document.querySelector(".fas fa-bars").addEventListener("click", function(){
     document.getElementsByClassName("menuCel").style.display = "block";
 })
 
+
 //console.log(data);
