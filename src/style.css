@@ -44,21 +44,74 @@ header{
     color:white;
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     flex-grow: 1;  
     background-size: 65% 200%;
     background-repeat: no-repeat;
     padding-top: 1%;
     padding-bottom: 1%;
-    padding-left: 2%;
+    padding-left: 1%;
     
 }
 
-.menu a:hover, .championsMenu a:hover, .hamburgerBtn:hover, .downloadGame:hover {
+.menu ul, .championsMenu ul{
+    display: flex;
+    list-style: none;
+}
+
+.menu li a {
+    justify-content: space-between;
+    margin: 0px 17px;
+}
+
+.championsMenu {
+    display:flex; 
+    text-align: center;
+    align-items: center;
+    color:white;
+    justify-content: space-between;
+    align-items:center;
+    font-family: 'Crimson Text', serif;
+    border-bottom: 3px solid rgb(207, 156, 26);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 4%;
+
+}
+
+.championsMenu li{
+    flex-grow: 1;
+}
+
+.championsMenu li a{
+    justify-content: space-between;
+    margin: 0px 12px;
+    font-size: 20px;
+    padding: 20px 0px;
+    float: inline-start;
+    
+    
+}
+
+.championsMenu li a:hover{
+    font-size: 23px;
+    
+}
+
+/* .menu li a {
+    display: block;
+    padding: 1% 1%;
+    justify-content: space-around;
+}   */
+
+.menu a:hover, .championsMenu a:hover, .hamburgerBtn:hover {
     color: #fff;
 	text-shadow:
 		0 0 8px rgb(0, 60, 255),
         0 0 10px rgba(0,178,255,1);
+}
+
+.downloadGame a:hover{
+    font-size: 24px;
 }
 
 #logoLol {
@@ -71,19 +124,10 @@ header{
 #lolIcon{
     height:90px;
     cursor: pointer;
-}
-
-.championsMenu {
-    display:flex; 
-    text-align: center;
-    color:white;
-    font-size: 25px;
-    justify-content: space-between;
-    align-items:center;
-    font-family: 'Crimson Text', serif;
-    border-bottom: 3px solid rgb(207, 156, 26);
 
 }
+
+
 
 .championsMenu li {
   margin : 0 10px;
@@ -91,7 +135,6 @@ header{
 }
 
 .downloadGame a{
-   
     background-color: RGB(0, 198, 226);
     color:black;
     justify-content: center;
@@ -108,25 +151,30 @@ header{
 }
 
 
-
-.championsMenu{
-    width: 100%;
-    background: transparent;
-    display:flex; 
-    text-align: center;
-    color:white;
-    font-size: 25px;
-    justify-content: space-around;
-    align-items:center;
-    font-family: 'Crimson Text', serif;
-    margin-left: 10%;
-    margin-right: 10%;
-    
-}
-
 .championsPage, #secondaryNav{
     width: 90%;
 }
+
+
+
+select, input {
+    background: none ;
+    border: 2px solid #FFB800;
+    box-sizing: border-box;
+    font-size: 21px;
+    font-family: 'Crimson Text', serif;
+    color:  #FFB800; 
+    margin-left: 10px;
+    margin-bottom: 12px;
+}
+
+.searchGlass {
+    color: #FFB800;
+    display: inline;
+    margin-left: 10px;
+}
+
+
 
 
 
@@ -207,7 +255,7 @@ footer{
         display: flex;
     } */
 
-    .menu, .hamburgerBtn{
+    .hamburgerBtn{
         display: block;
         justify-content: flex-end;
         display: flex;
@@ -219,13 +267,13 @@ footer{
         width: 100%;
     }
 
-    .champions, .statistics, .about, .championsMenu, #secondaryNav{
+    /* .champions, .statistics, .about, .championsMenu, #secondaryNav{
         display: none;
-    }
-
-    /* .championsMenuCel, #secondaryNavCel{
-        display: block;
     } */
+
+  
+
+  
 
     
 
@@ -242,6 +290,11 @@ footer{
         width: 90%;
         height: 60%;
         display: flex;
+    }
+
+    .championsMenu{
+        display: flex;
+        flex-direction: column;
     }
 
 
