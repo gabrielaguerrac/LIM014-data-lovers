@@ -129,6 +129,11 @@ header{
 
 
 
+.championsMenu li {
+  margin : 0 10px;
+  display: inline-block
+}
+
 .downloadGame a{
     background-color: RGB(0, 198, 226);
     color:black;
