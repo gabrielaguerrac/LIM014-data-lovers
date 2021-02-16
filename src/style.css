@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
 
 *{
     margin: 0;
@@ -16,8 +17,6 @@ background-position: center;
 background-size: cover;
 background-attachment: fixed;
 background-color: black;
-/* max-width: 1500px; */
-/*margin: auto; */
 
 display: flex;
 flex-direction: row;
@@ -89,7 +88,6 @@ header{
     padding: 20px 0px;
     float: inline-start;
     
-    
 }
 
 .championsMenu li a:hover{
@@ -97,13 +95,8 @@ header{
     
 }
 
-/* .menu li a {
-    display: block;
-    padding: 1% 1%;
-    justify-content: space-around;
-}   */
 
-.menu a:hover, .championsMenu a:hover, .hamburgerBtn:hover {
+.menu a:hover, .hamburgerBtn:hover {
     color: #fff;
 	text-shadow:
 		0 0 8px rgb(0, 60, 255),
@@ -127,12 +120,6 @@ header{
 
 }
 
-
-
-.championsMenu li {
-  margin : 0 10px;
-  display: inline-block
-}
 
 .downloadGame a{
     background-color: RGB(0, 198, 226);
@@ -176,20 +163,6 @@ select, input {
 
 
 
-
-
-
-/* footer{
-    background-color: transparent;
-    display: block;
-    color:white;
-    font-size: 18px;
-    text-align: left;
-    align-items: flex-end;
-    align-self: flex-end;
-    flex-direction: column;
-} */
-
 footer{
     position: fixed;
     left: 0;
@@ -208,8 +181,8 @@ footer{
 
 .page2-Champions{
     background-image: url(imagenes/senna.jpg);
-    
 }
+
 
 .page3-Statistics{
     background-image: url(imagenes/samira.jpg);
@@ -226,8 +199,44 @@ footer{
 }
 
 
+#almacen{
+    display: flex; 
+    height: auto;
+    width: 100%;
+    margin: 3%;
+    justify-content: center;
+}
 
+article{
+    display:inline-flex;
+    height: 273px; 
+    width: 250px;
+    margin: 15.7px;
+    background: rgba(161, 97, 35, 1) ;
+    color: rgb(241, 204, 111);
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.788);
+}
 
+.card{
+    height: 250px; 
+    width: 250px;
+}
+
+h3{
+    background:rgba(161, 97, 35, 1);
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+article:hover{
+    box-shadow:
+    0 0 10px rgb(211, 39, 16),
+    0 0 12px rgb(98, 12, 155),
+    0 0 15px rgb(12, 14, 155);
+}
 
 @media (min-width: 320px) and (max-width: 767px){
 
