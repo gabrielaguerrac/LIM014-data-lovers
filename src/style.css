@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
 
 *{
     margin: 0;
@@ -16,8 +17,6 @@ background-position: center;
 background-size: cover;
 background-attachment: fixed;
 background-color: black;
-/* max-width: 1500px; */
-/*margin: auto; */
 
 display: flex;
 flex-direction: row;
@@ -44,21 +43,68 @@ header{
     color:white;
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     flex-grow: 1;  
     background-size: 65% 200%;
     background-repeat: no-repeat;
     padding-top: 1%;
     padding-bottom: 1%;
-    padding-left: 2%;
+    padding-left: 1%;
     
 }
 
-.menu a:hover, .championsMenu a:hover, .hamburgerBtn:hover, .downloadGame:hover {
+.menu ul, .championsMenu ul{
+    display: flex;
+    list-style: none;
+}
+
+.menu li a {
+    justify-content: space-between;
+    margin: 0px 17px;
+}
+
+.championsMenu {
+    display:flex; 
+    text-align: center;
+    align-items: center;
+    color:white;
+    justify-content: space-between;
+    align-items:center;
+    font-family: 'Crimson Text', serif;
+    border-bottom: 3px solid rgb(207, 156, 26);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 4%;
+
+}
+
+.championsMenu li{
+    flex-grow: 1;
+}
+
+.championsMenu li a{
+    justify-content: space-between;
+    margin: 0px 12px;
+    font-size: 20px;
+    padding: 20px 0px;
+    float: inline-start;
+    
+}
+
+.championsMenu li a:hover{
+    font-size: 23px;
+    
+}
+
+
+.menu a:hover, .hamburgerBtn:hover {
     color: #fff;
 	text-shadow:
 		0 0 8px rgb(0, 60, 255),
         0 0 10px rgba(0,178,255,1);
+}
+
+.downloadGame a:hover{
+    font-size: 24px;
 }
 
 #logoLol {
@@ -71,22 +117,11 @@ header{
 #lolIcon{
     height:90px;
     cursor: pointer;
-}
-
-.championsMenu {
-    display:flex; 
-    text-align: center;
-    color:white;
-    font-size: 25px;
-    justify-content: space-between;
-    align-items:center;
-    font-family: 'Crimson Text', serif;
-    border-bottom: 3px solid rgb(207, 156, 26);
 
 }
+
 
 .downloadGame a{
-   
     background-color: RGB(0, 198, 226);
     color:black;
     justify-content: center;
@@ -103,39 +138,30 @@ header{
 }
 
 
-
-.championsMenu{
-    width: 100%;
-    background: transparent;
-    display:flex; 
-    text-align: center;
-    color:white;
-    font-size: 25px;
-    justify-content: space-around;
-    align-items:center;
-    font-family: 'Crimson Text', serif;
-    margin-left: 10%;
-    margin-right: 10%;
-    
-}
-
 .championsPage, #secondaryNav{
     width: 90%;
 }
 
 
 
+select, input {
+    background: none ;
+    border: 2px solid #FFB800;
+    box-sizing: border-box;
+    font-size: 21px;
+    font-family: 'Crimson Text', serif;
+    color:  #FFB800; 
+    margin-left: 10px;
+    margin-bottom: 12px;
+}
 
-/* footer{
-    background-color: transparent;
-    display: block;
-    color:white;
-    font-size: 18px;
-    text-align: left;
-    align-items: flex-end;
-    align-self: flex-end;
-    flex-direction: column;
-} */
+.searchGlass {
+    color: #FFB800;
+    display: inline;
+    margin-left: 10px;
+}
+
+
 
 footer{
     position: fixed;
@@ -155,8 +181,8 @@ footer{
 
 .page2-Champions{
     background-image: url(imagenes/senna.jpg);
-    
 }
+
 
 .page3-Statistics{
     background-image: url(imagenes/samira.jpg);
@@ -168,13 +194,49 @@ footer{
     
 }
 
-.championsMenuCel, #secondaryNavCel{
+.championsMenuCel, #secondaryNavCel, .menuCel{
     display: none;
 }
 
 
+#almacen{
+    display: flex; 
+    height: auto;
+    width: 100%;
+    margin: 3%;
+    justify-content: center;
+}
 
+article{
+    display:inline-flex;
+    height: 273px; 
+    width: 250px;
+    margin: 15.7px;
+    background: rgba(161, 97, 35, 1) ;
+    color: rgb(241, 204, 111);
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.788);
+}
 
+.card{
+    height: 250px; 
+    width: 250px;
+}
+
+h3{
+    background:rgba(161, 97, 35, 1);
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+article:hover{
+    box-shadow:
+    0 0 10px rgb(211, 39, 16),
+    0 0 12px rgb(98, 12, 155),
+    0 0 15px rgb(12, 14, 155);
+}
 
 @media (min-width: 320px) and (max-width: 767px){
 
@@ -202,7 +264,7 @@ footer{
         display: flex;
     } */
 
-    .menu, .hamburgerBtn{
+    .hamburgerBtn{
         display: block;
         justify-content: flex-end;
         display: flex;
@@ -214,13 +276,13 @@ footer{
         width: 100%;
     }
 
-    .champions, .statistics, .about, .championsMenu, #secondaryNav{
+    /* .champions, .statistics, .about, .championsMenu, #secondaryNav{
         display: none;
-    }
+    } */
 
-    .championsMenuCel, #secondaryNavCel{
-        display: block;
-    }
+  
+
+  
 
     
 
@@ -237,6 +299,11 @@ footer{
         width: 90%;
         height: 60%;
         display: flex;
+    }
+
+    .championsMenu{
+        display: flex;
+        flex-direction: column;
     }
 
 
