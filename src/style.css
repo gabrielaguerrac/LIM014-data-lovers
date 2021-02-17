@@ -3,96 +3,142 @@
 @import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
 
-*{
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
     box-sizing: border-box;
 }
 
 body {
-background-image: url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg");
-width: 100%;
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
-background-attachment: fixed;
-background-color: black;
-
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-/* flex-flow: row wrap; */
-
-}
-
-header{
-    font-size: 27px;
-    font-family: 'Crimson Pro', serif;
-    width: 90%;
-    padding: 10px;
-    display: flex;
-    /* justify-content: left; */
-    align-items: center;
-    flex-direction: row; /*coloca los elementos en fila*/
-    flex-wrap: wrap; /*posiciona los elementos uno debajo de otro*/
-    
-}
-
-.menu {
-    background: linear-gradient(to right,rgba(236, 187, 65, 0.932), rgba(245, 195, 70, 0.767), rgba(244, 189, 51, 0));
-    color:white;
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1;  
-    background-size: 65% 200%;
+    background-image: url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg");
+    width: 100%;
     background-repeat: no-repeat;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 1%;
-    
-}
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: black;
 
-.menu ul, .championsMenu ul{
     display: flex;
-    list-style: none;
-}
-
-.menu li a {
-    justify-content: space-between;
-    margin: 0px 17px;
-}
-
-.championsMenu {
-    display:flex; 
-    text-align: center;
-    align-items: center;
-    color:white;
-    justify-content: space-between;
-    align-items:center;
-    font-family: 'Crimson Text', serif;
-    border-bottom: 3px solid rgb(207, 156, 26);
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 4%;
+    flex-direction: row;
+    flex-wrap: wrap;
 
 }
 
-.championsMenu li{
-    flex-grow: 1;
+header {
+    background: linear-gradient(to right,rgba(236, 187, 65, 0.932), rgba(245, 195, 70, 0.767), rgba(244, 189, 51, 0));
+    font-family: 'Crimson Text';
+    height: 65px;
+    width: 60%;
 }
 
-.championsMenu li a{
-    justify-content: space-between;
-    margin: 0px 12px;
-    font-size: 20px;
-    padding: 20px 0px;
-    float: inline-start;
+#lolIcon {
+    height:50px;
+    cursor: pointer;
+    float: left;
+}
+
+.menu ul {
+    float: left;
+    margin-right: 30%;
     
 }
 
-.championsMenu li a:hover{
-    font-size: 23px;
+.menu ul li {
+    display: inline-block;
+    line-height: 50px;
+    margin: 0 15px;
     
+}
+
+.menu ul li a {
+    padding: 7px 13px;
+    color: white;
+    font-size: 25px;
+    /* text-align: center; */
+    border-radius: 3px;
+    /*text-align: center;
+        */
+}
+
+a.active, a:hover {
+    background: rgba(207, 156, 26, 0);
+    transition: .4s;
+    
+}
+
+.checkBtn {
+    font-size: 30px;
+    color: black;
+    float: right;
+    line-height: 50px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+
+}
+
+@media (max-width: 952px) {
+
+    .menu ul li a {
+        font-size: 22px;
+        text-transform: uppercase;
+    }
+    
+
+}
+
+@media (max-width: 858px) {
+    .checkBtn {
+        display: block;
+    }
+
+    header {
+        background: black;
+        width: 100%;
+    }
+
+    .checkBtn {
+        color: white;
+    }
+
+    .menu ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: black;
+        top: 50px;
+        left: -100%;
+        text-align: center;
+        display: inline-block;
+        transition: all .4s;
+}
+
+    .menu ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    .menu ul li a {
+        font-size: 25px;
+    }
+
+    .menu a:hover, a.active , .checkBtn:hover {
+        background: none;
+        color:rgb(207, 156, 26);
+        
+    }
+
+    #check:checked ~ul {
+        left: 0;
+        transition: 1s;
+}
 }
 
 
@@ -109,23 +155,13 @@ header{
 
 #logoLol {
     padding-left: 7%;
-    height:420px;
+    height:400px;
     padding-bottom: 6%;
     margin-top: 10%;
 }
 
-#lolIcon{
-    height:90px;
-    cursor: pointer;
-
-}
 
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> main
 .downloadGame a{
     background-color: RGB(0, 198, 226);
     color:black;
@@ -143,27 +179,47 @@ header{
 }
 
 
-.championsPage, #secondaryNav{
-    width: 90%;
+.championsMenu {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around; 
+    /* box-sizing: border-box; */
+    width: 100%;
+    border: 4px solid rgb(207, 156, 26); 
+    background-color: none;
+    /* border-color: 5px rgb(207, 156, 26); */
+    
+    margin-left: 10%;
+    margin-right: 10%;
+
 }
 
 
 
-select, input {
+input,select {
     background: none ;
-    border: 2px solid #FFB800;
+    border: 3px solid #FFB800;
     box-sizing: border-box;
-    font-size: 21px;
+    /* margin: 0 20px; */
+    font-size: 25px;
     font-family: 'Crimson Text', serif;
     color:  #FFB800; 
-    margin-left: 10px;
+    margin-top: 12px;
+    /* margin-left: 5%; */
     margin-bottom: 12px;
+}
+
+#search {
+    display: inline-block;
+    
 }
 
 .searchGlass {
     color: #FFB800;
     display: inline;
-    margin-left: 10px;
+    margin-left: 5px;
+    /* width: 10%; */
 }
 
 
@@ -204,7 +260,7 @@ footer{
 }
 
 
-#almacen{
+#storage{
     display: flex; 
     height: auto;
     width: 100%;
@@ -243,7 +299,7 @@ article:hover{
     0 0 15px rgb(12, 14, 155);
 }
 
-@media (min-width: 320px) and (max-width: 767px){
+/* @media (min-width: 320px) and (max-width: 767px){
 
     body {
     background-image: url(imagenes/CaitlynCel.png);
@@ -263,11 +319,6 @@ article:hover{
         height: 40px;
     }
 
-    /* .hamburgerBtn{
-        display: block;
-        justify-content: flex-end;
-        display: flex;
-    } */
 
     .hamburgerBtn{
         display: block;
@@ -281,17 +332,16 @@ article:hover{
         width: 100%;
     }
 
-    /* .champions, .statistics, .about, .championsMenu, #secondaryNav{
+     /* .champions, .statistics, .about, .championsMenu, #secondaryNav{
         display: none;
-    } */
+    } 
 
   
 
   
 
-    
 
-}
+} 
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
     body {
@@ -313,4 +363,4 @@ article:hover{
 
 
 
-}
+} */
