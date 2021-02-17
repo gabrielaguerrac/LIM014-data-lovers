@@ -10,63 +10,65 @@
   
   <body id="body">
     
-      <header>
-      <section class="lolBtn"> 
-        <img id="lolIcon" src="imagenes/League_of_Legends_Icon.png" >
-      </section> <!-- La L dorada que indexa a la pag de inicio -->
-
-      
-      <nav section class="menu" id="principalNav">
-        <ul>
-          <li><a class="champions" id="champions">CAMPEONES</a></li>
-          <li><a class="statistics" id="statistics">ESTADÍSTICAS</a></li>
-          <li><a class="about" id="about">ACERCA DE</a></li>
-        </ul>
-
-        <span class="hamburgerBtn">
-          <i class="fas fa-bars"></i> 
+    <header>
+      <nav class="menu" id="firstNavigator">
+  
+        <img src="imagenes/League_of_Legends_Icon.png" alt="Regresa a inicio" class="lolBtn" id="lolIcon">
+  
+       <input type="checkbox" id="check">
+       <label for="check" class="checkBtn">
+        <i class="fas fa-bars"></i> 
+       </label>
+   
+       <ul class="menuOptions">
+        <li ><a class="active" href="#" id="champions">CAMPEONES</a></li>
+        <li><a href="#" id="statistics">RANKING</a></li>
+        <li><a href="#" id="about">ACERCA DE</a></li>
+       </ul>
+       
       </nav>
-     </header> 
+    </header>
+
 
       <aside class="logoLol" id="leagueOfLegends"> 
         <img id="logoLol" src="imagenes/lol logo.png" >
        <!-- El texto league of legends dorado -->
 
         <section class="downloadGame"> 
-      <a href="https://signup.euw.leagueoflegends.com/es/signup/index#/" target="_blank">DESCARGA EL JUEGO</a>
+        <a href="https://signup.euw.leagueoflegends.com/es/signup/index#/" target="_blank">DESCARGA EL JUEGO</a>
         </section>
       </aside>
     
 
-      <section class="championsPage">
-      
-      <nav section class="championsMenu" id="secondaryNav"> 
-        <ul>
-          <li><a id="all">TODOS</a></li>
-          <li><a id="assassin">ASESINO</a></li>
-          <li><a id="fighter">LUCHADOR</a></li>
-          <li><a id="mage">MAGO</a></li>
-          <li><a id="support">SOPORTE</a></li>
-          <li><a id="tank">TANQUE</a></li>
-          <li><a id="carry">TIRADOR</a></li>
-          <li><select name="order" id="order">
-            <option disabled selected value= "-">Ordenar por</option>
-            <option value="aZ">A-Z</option>
-            <option value="zA">Z-A</option>
-            <option value="dificulty">Dificultad</option>
-          </select></li>
-          <li><a>   
-            <p class="searchGlass"><i class="fas fa-search" id="glass"></i></p>
-            <input type="text" placeholder="Buscar..." name="search">
-          </a></li>
-        </ul>
-      </nav>
+    <nav class="championsMenu" id="secondNavigator">
+      <select name="allTheRoles" id="allRoles">
+        <option value="all">TODOS LOS ROLES</option>
+        <option value="assassin">ASESINO</option>
+        <option value="fighter">LUCHADOR</option>
+        <option value="mage">MAGO</option>
+        <option value="support">SOPORTE</option>
+        <option value="tank">TANQUE</option>
+        <option value="carry">TIRADOR</option>
+      </select>
+      <select name="order" id="order">
+        <option disabled selected value= "-">ORDENAR</option>
+        <option value="aZ">A-Z</option>
+        <option value="zA">Z-A</option>
+      </select>
+        <section id="search">
+        <p class="searchGlass"><i class="fas fa-search" id="glass"></i></p>
+        <input type="text" placeholder="BUSCAR" name="search">
+        </section>
+  
+    </nav>
+    
+  
+    <section id="storage">
 
     </section>
+ 
     
-      <section id="almacen">
-        
-      </section>
+
       
 
   <footer>™& © 2021 Riot Games Inc. Todos los derechos reservados.

@@ -7,22 +7,24 @@
 //import { example } from './data.js';
 import data from './data/lol/lol.js';
 
-document.getElementById("principalNav").style.display= "block";
-document.getElementById("secondaryNav").style.display= "none";
-document.getElementById("almacen").style.display="none";
+document.getElementById("firstNavigator").style.display= "block";
+document.getElementById("secondNavigator").style.display= "none";
+document.getElementById("storage").style.display="none";
+
 
 //PARA EL CAMBIO DE PAGINA - AL DAR CLICK EN EL MENU DORADITO A CAMPEONES
 document.getElementById("champions").addEventListener("click", function() {
-    document.getElementById("secondaryNav").style.display= "block";
+    document.getElementById("secondNavigator").style.display= "block";
     document.getElementById("leagueOfLegends").style.display= "none";
     document.getElementById("body").classList.add("page2-Champions");
     document.getElementById("body").classList.remove("page3-Statistics");
     document.getElementById("body").classList.remove("page4-InfoAbout");
-    document.getElementById("almacen").style.display="block";
+    document.getElementById("storage").style.display="block";
+    
    //const dataAllChampions = Object.values(data);
 
     
-    const section = document.getElementById('almacen');
+    const section = document.getElementById('storage');
     let claves = Object.keys(data.data); 
     
     for(let i=0; i< claves.length; i++){
@@ -47,25 +49,26 @@ document.getElementById("champions").addEventListener("click", function() {
    
 });
 
+
 //AL DAR CLICK EN ESTADISTICA CAMBIO IMAGEN FONDO ETC
 document.getElementById("statistics").addEventListener("click", function() {
-    document.getElementById("secondaryNav").style.display= "none";
+    document.getElementById("secondNavigator").style.display= "none";
     document.getElementById("leagueOfLegends").style.display= "none";
     document.getElementById("body").classList.add("page3-Statistics");
     document.getElementById("body").classList.remove("page2-Champions");
     document.getElementById("body").classList.remove("page4-InfoAbout");
-    document.getElementById("almacen").style.display= "none";
+    document.getElementById("storage").style.display= "none";
    //const dataAllChampions = Object.values(data);
    
 });
 
 document.getElementById("about").addEventListener("click", function() {
-    document.getElementById("secondaryNav").style.display= "none";
+    document.getElementById("secondNavigator").style.display= "none";
     document.getElementById("leagueOfLegends").style.display= "none";
     document.getElementById("body").classList.add("page4-InfoAbout");
     document.getElementById("body").classList.remove("page3-Statistics");
     document.getElementById("body").classList.remove("page2-Champions");
-    document.getElementById("almacen").style.display= "none";
+    document.getElementById("storage").style.display= "none";
    //const dataAllChampions = Object.values(data);
    
 });
