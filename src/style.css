@@ -5,9 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Benne&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gelasio:wght@500&display=swap');
 
-*{
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
@@ -120,11 +122,10 @@ a.active, a:hover {
 
 #logoLol {
     padding-left: 7%;
-    height:420px;
+    height:400px;
     padding-bottom: 6%;
     margin-top: 15%;
 }
-
 
 
 
@@ -146,7 +147,7 @@ a.active, a:hover {
 
 
 
-select, input {
+input,select {
     background: none ;
     border: 3px solid #FFB800;
     box-sizing: border-box;
@@ -170,6 +171,11 @@ select, input {
     display: inline-block;
     font-size: 20px;
     margin-left: 10%;
+}
+
+#search {
+    display: inline-block;
+    
 }
 
 .searchGlass {
