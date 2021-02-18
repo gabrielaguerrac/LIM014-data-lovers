@@ -21,3 +21,4 @@ describe('anotherExample', () => {
     expect(anotherExample()).toBe('OMG');
   });
 });
+--comparar arreglo app inicial con 
