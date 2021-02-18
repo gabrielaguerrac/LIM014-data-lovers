@@ -45,6 +45,7 @@ document.getElementById("champions").addEventListener("click", function() {
     
       section.appendChild(article);
       //console.log(key1.id);
+      
     }
    
 });
@@ -78,20 +79,3 @@ function(){
     location.reload();
 }
 )
-
-// addEventListener("DOMContentLoaded", () => {
-//     const hamburgerBtn = document.querySelector(".hamburgerBtn")
-//     if (hamburgerBtn) {
-//         hamburgerBtn.addEventListener('click', () =>{
-//             const menuCel = document.querySelector(".menu");
-//             menuCel.classList.toggle("show")
-//         })
-//     }
-// }
-//PARTE CELULAR
-
-// document.querySelector(".fas fa-bars").addEventListener("click", function(){
-//     document.getElementsByClassName("menuCel").style.display = "block";
-// })
-
-//console.log(data);
