@@ -10,9 +10,12 @@ import data from './data/lol/lol.js';
 document.getElementById("firstNavigator").style.display= "block";
 document.getElementById("secondNavigator").style.display= "none";
 document.getElementById("storage").style.display="none";
+document.getElementById("modalContainer").style.display = "none";
 
 
 //PARA EL CAMBIO DE PAGINA - AL DAR CLICK EN EL MENU DORADITO A CAMPEONES
+const storage = document.getElementById("storage");
+const modalContainer = document.getElementById("modalContainer");
 document.getElementById("champions").addEventListener("click", function() {
     document.getElementById("secondNavigator").style.display= "block";
     document.getElementById("leagueOfLegends").style.display= "none";
@@ -24,27 +27,68 @@ document.getElementById("champions").addEventListener("click", function() {
    //const dataAllChampions = Object.values(data);
 
     
-    const section = document.getElementById('storage');
-    let claves = Object.keys(data.data); 
     
-    for(let i=0; i< claves.length; i++){
+    let claves = Object.keys(data.data); //primer data del import segundo data es el data que contiene data
+    //console.log(claves); segun la estructura lol.js data solo muestra los nombres de los campeoens, estos a su vez son objetos con mas atributos
+    
+    for(let i=0; i< claves.length; i++){ //length 134 campeones
       let clave = claves[i];
-      let key1 = data.data[clave];
+      //   console.log(clave);//claves [i]sigue siendo el nombre de los obj dentro de data (nombre del campeon)
+      let key = data.data[clave];
+      //   console.log(key1);//va a almacenar en key1 toda la data de clave. clave obj del champion. data.data la data del objeto que este en [i]
       
       const article = document.createElement('article');
+      article.setAttribute("class", "cardContainer");
       const champName = document.createElement('h3');
       const img = document.createElement('img');
-      img.setAttribute("src", key1.splash);
-      img.setAttribute("class", "card");
+      img.setAttribute("src", key.splash);//le estoy especificando que de toda la data del champ me traiga la del atributo splash
+      img.setAttribute("class", "cardImg");//setAttribute("nombreAtributo","valorDelAtributo")
     
       
-      champName.textContent=key1.id;
+      champName.textContent=key.id;//key1.id es el nombre del champ como atributo no como obj
       
       article.appendChild(img);
       article.appendChild(champName);
     
-      section.appendChild(article);
+      storage.appendChild(article);
       //console.log(key1.id);
+
+      article.addEventListener("click", ()=>{
+          modalContainer.style.display = "block";
+
+          const modal = document.createElement("article");
+          modal.setAttribute("class", "modal");
+          const imgChampion = document.createElement('img');
+          imgChampion.setAttribute("src", key.splash);
+          imgChampion.setAttribute("class", "modalImg");
+
+          const nameModal = document.createElement("h1");
+          const titleModal = document.createElement("h2");
+          const descriptionModal = document.createElement("p");
+          const infoModal = document.createElement("p");
+          const tagsModal = document.createElement("p");
+
+          titleModal.setAttribute("class", "modalTitle");
+          nameModal.setAttribute("class", "modalName");
+          descriptionModal.setAttribute("class", "modalDescription");
+          infoModal.setAttribute("class", "modalInfo");
+          tagsModal.setAttribute("class", "modalTags");
+
+          titleModal.textContent = key.title;
+          nameModal.textContent = key.name;
+          descriptionModal.textContent = key.blurb;
+          infoModal.textContent = key.info;
+          tagsModal.textContent = "Roles: " +key.tags;
+
+          modal.appendChild(imgChampion);
+          modal.appendChild(titleModal);
+          modal.appendChild(nameModal);
+          modal.appendChild(descriptionModal);
+          modal.appendChild(infoModal);
+          modal.appendChild(tagsModal);
+         
+          modalContainer.appendChild(modal);
+      })
     }
    
 });
@@ -79,20 +123,5 @@ function(){
 }
 )
 
-// addEventListener("DOMContentLoaded", () => {
-//     const hamburgerBtn = document.querySelector(".hamburgerBtn")
-//     if (hamburgerBtn) {
-//         hamburgerBtn.addEventListener('click', () =>{
-//             const menuCel = document.querySelector(".menu");
-//             menuCel.classList.toggle("show")
-//         })
-//     }
-// }
-//PARTE CELULAR
-
-// document.querySelector(".fas fa-bars").addEventListener("click", function(){
-//     document.getElementsByClassName("menuCel").style.display = "block";
-// })
 
 
-//console.log(data);
