@@ -26,8 +26,52 @@ document.getElementById("champions").addEventListener("click", function() {
     
    //const dataAllChampions = Object.values(data);
 
+   //CODIGO FARES
+   function prueba1 (arreglo, domElement, sentido){
+    let claves;
+    if(sentido == true){
+
+    claves = Object.keys(arreglo);
+    }else{
+     claves = Object.keys(arreglo).reverse();
+    } //primer data del import segundo data es el data que contiene data
+//console.log(claves); //segun la estructura lol.js data solo muestra los nombres de los campeoens, estos a su vez son objetos con mas atributos
+
+for(let i=0; i< claves.length; i++){//length 134 campeones
+  let clave = claves[i];
+//   console.log(clave);//claves [i]sigue siendo el nombre de los obj dentro de data (nombre del campeon)
+  let key1 = arreglo[clave];
+//   console.log(key1);//va a almacenar en key1 toda la data de clave. clave obj del champion. data.data la data del objeto que este en [i]
+  
+  
+  const article = document.createElement('article');
+  const champName = document.createElement('h3');
+  const img = document.createElement('img');
+  img.setAttribute("src", key1.splash);//le estoy especificando que de toda la data del champ me traiga la del atributo splash
+  img.setAttribute("class", "card");//setAttribute("nombreAtributo","valorDelAtributo")
+
+  champName.textContent=key1.id;//key1.id es el nombre del champ como atributo no como obj
+  
+  
+  article.appendChild(img);
+  article.appendChild(champName);
+
+  
+
+
+  domElement.appendChild(article);
+
+} 
+
+}
+const section = document.getElementById('storage');
+  //console.log(key1.id);
+  prueba1(data.data, section, false);
+
+  
+
     
-    
+    //CODIGO NOSOTRAS
     let claves = Object.keys(data.data); //primer data del import segundo data es el data que contiene data
     //console.log(claves); segun la estructura lol.js data solo muestra los nombres de los campeoens, estos a su vez son objetos con mas atributos
     
