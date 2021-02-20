@@ -34,12 +34,11 @@ document.getElementById("champions").addEventListener("click", function() {
     claves = Object.keys(arreglo);
     }else{
      claves = Object.keys(arreglo).reverse();
-    } //primer data del import segundo data es el data que contiene data
-//console.log(claves); //segun la estructura lol.js data solo muestra los nombres de los campeoens, estos a su vez son objetos con mas atributos
+    } 
 
 for(let i=0; i< claves.length; i++){//length 134 campeones
   let clave = claves[i];
-//   console.log(clave);//claves [i]sigue siendo el nombre de los obj dentro de data (nombre del campeon)
+  //   console.log(clave);//claves [i]sigue siendo el nombre de los obj dentro de data (nombre del campeon)
   let key1 = arreglo[clave];
 //   console.log(key1);//va a almacenar en key1 toda la data de clave. clave obj del champion. data.data la data del objeto que este en [i]
   
