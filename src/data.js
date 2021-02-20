@@ -1,9 +1,20 @@
-// estas funciones son de ejemplo
+// // estas funciones son de ejemplo
 
-export const example = () => {
-  return 'example';
-};
+export const orderChampions = (data, sortBy, sortOrder) => {
 
-export const anotherExample = () => {
-  return 'OMG';
-};
+  
+
+
+}
+
+export const filterChampions = (data, condition) => {
+
+  return Object.entries(data) ;
+
+}
+
+export const computeStats = (data) => {
+
+  return Object.entries(data) ;
+
+}
