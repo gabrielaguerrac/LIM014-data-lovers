@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Benne&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gelasio:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
     padding: 0;
@@ -152,8 +153,8 @@ input,select {
     border: 3px solid #FFB800;
     box-sizing: border-box;
     /* margin: 0 20px; */
-    font-size: 22px;
-    font-family: 'Benne', serif;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
     color:  #FFB800; 
     /* margin-top: 12px;
     /* margin-left: 5%; 
@@ -188,7 +189,7 @@ input,select {
 
 
 footer{
-    position: fixed;
+    position:fixed;
     left: 0;
     bottom: 4%;
     width: 100%;
@@ -236,6 +237,7 @@ footer{
 .cardImg{
     height: 250px; 
     width: 250px;
+    object-fit: cover;
 }
 
 h3{
@@ -251,34 +253,12 @@ h3{
     0 0 15PX rgb(12, 14, 155);
 }
 
-/* .modal{
-    /* display: flex; */
-    /* width: 50%;
-    height: 100vh;
-    background-color: black;
-    border: 5px solid rgb(207, 156, 26);
-    color: white;
-    
-} */
-
-
-/* .modalImg{
-    object-fit: cover;
+#modalContainer{
+    position: absolute;
+    position:fixed;
+    background-color: rgba(0, 0, 0, 0.753);
     width: 100%;
-    /* display: flex; 
-
-} */ 
-
-/* h2{
-    font-size: 40px;
-} */
-
-.modalContainer{
-    
-    background-color: rgba(0,0,0,0.5);
-    width: 60%;
     height: 100%;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
     
@@ -286,48 +266,52 @@ h3{
 }
 
 .modal{
-    /* position: relative; */
-    width: 60%;
-    height: 50%;
+    object-fit: cover;
+    position:absolute;
+    position:fixed;
+    margin:05% 25%;
+    text-align: center;
+    width: 50%;
+    height: 80%;
     background-color: black;
-    border: 5px solid rgb(207, 156, 26);
+    border: 3px solid rgba(161, 97, 35, 1) ;
     color: white;
-  
-   
-  
-
-
-    
 }
 
 
 .modalImg{
     object-fit: cover;
     width: 100%;
-    /* display: flex; */
     height: 65%;
-   
     position: relative;
+    z-index:1;
+    padding:1%;
 
 }
 
 h2{
+    position: relative;
     font-size: 20px;
     text-align: center;
-    padding-bottom: 2%;
-    z-index: 2;
+    padding-bottom: 0.5%;
+    font-family: 'Gelasio', serif;
+    font-weight: 80;
 }
 
-.modalh1{
+.modalName{
+    position: relative;
     font-size: 30px;
     text-align: center;
-    padding-bottom: 2%;
-    
+    padding-bottom: 0.5%;
+    color: rgb(241, 204, 111);
+    font-family: 'Cinzel Decorative', cursive;
 }
 
 .modal p{
     text-align: justify;
     padding: 1% 1%;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
 } 
 
 
