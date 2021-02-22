@@ -6,16 +6,22 @@
 
 //import { allDataChampions } from './data.js';
 import data from './data/lol/lol.js';
+import {orderChampions, filterRoles} from './data.js';
+
+
 
 document.getElementById("firstNavigator").style.display= "block";
 document.getElementById("secondNavigator").style.display= "none";
 document.getElementById("storage").style.display="none";
 document.getElementById("modalContainer").style.display = "none";
 
-
-//PARA EL CAMBIO DE PAGINA - AL DAR CLICK EN EL MENU DORADITO A CAMPEONES
-const storage = document.getElementById("storage");
+const storage = document.getElementById('storage');
+const searchBar = document.getElementById("searchBar");
+const entries = Object.entries(data.data);
 const modalContainer = document.getElementById("modalContainer");
+
+//PARA EL CAMBIO DE PAGINA - AL DAR CLICK EN EL MENU DORADITO A CAMPEONE
+
 document.getElementById("champions").addEventListener("click", function() {
     document.getElementById("secondNavigator").style.display= "block";
     document.getElementById("leagueOfLegends").style.display= "none";
@@ -24,72 +30,66 @@ document.getElementById("champions").addEventListener("click", function() {
     document.getElementById("body").classList.remove("page4-InfoAbout");
     document.getElementById("storage").style.display="block";
     
+    const showChampions = (champions) => {
+        let htmlString = champions.map((element)  => {
+          
+          //console.log(element);
+            let propChamp =  element[1];
+            // console.log(propChamp);  
+          return   `<article class=${propChamp.name}>
+          <img class="card" src="${propChamp.splash}"></img>
+          <h3>${propChamp.name}</h3> 
+          </article>`         
+        } )
+       // console.log(htmlString);
+        storage.innerHTML = htmlString;  
+        }
+      showChampions(entries);
 
-    function showingChamps(champion, storage, modalContainer){
+    //FUNCION DE LA BARRA: BUSCAR X NOMBRE
+    searchBar.addEventListener("keyup", (e) =>{
+        const searchValue = e.target.value.toLowerCase();
+        
+        let filteredChampions = entries.filter(element => {
+          let propChamp =  element[1];
+          console.log(propChamp);
+         return propChamp.name.toLowerCase().includes(searchValue);
+        })
+        showChampions(filteredChampions);
+        //console.log(filteredChampions);
+      });
+    
 
-
-        for (let keyChampions in champion){
-            let objectChampions = champion[keyChampions];
-            //console.log(typeof objectChampions);
-            
-            let propertiesChamp = objectChampions[1];
-            console.log(typeof propertiesChamp);
+    //FUNCION BUSCAR X ROLES
+      document.getElementById("allRoles").addEventListener("change", (e)=>{
+        const roleSelected = e.target.value;
+        console.log(e);
+        //console.log(roleSelected);
+        const filterRoles= entries.filter(element => {
+          let propChamp =  element[1];
+         // console.log(propChamp.tags[0]);
+         //console.log(propChamp.tags[1]);
+         let dos = propChamp.tags[0]|| propChamp.tags[1]
+         return dos.includes(roleSelected);
                 
-            const article = document.createElement('article');
-            article.setAttribute("class", "cardContainer");
-            const champName = document.createElement('h3');
-            const img = document.createElement('img');
-            img.setAttribute("src" , propertiesChamp.splash);
-            img.setAttribute("class", "cardImg");
-            
-            champName.textContent=propertiesChamp.id;
-            
-            article.appendChild(img);
-            article.appendChild(champName);
-            
-            storage.appendChild(article);
+        }
+        )
+        showChampions(filterRoles);
+      });
 
-      article.addEventListener("click", ()=>{
-          modalContainer.style.display = "block";
-
-          const modal = document.createElement("article");
-          modal.setAttribute("class", "modal");
-          const imgChampion = document.createElement('img');
-          imgChampion.setAttribute("src", propertiesChamp.splash);
-          imgChampion.setAttribute("class", "modalImg");
-
-          const nameModal = document.createElement("h1");
-          const titleModal = document.createElement("h2");
-          const descriptionModal = document.createElement("p");
-          const infoModal = document.createElement("p");
-          const tagsModal = document.createElement("p");
-
-          titleModal.setAttribute("class", "modalTitle");
-          nameModal.setAttribute("class", "modalName");
-          descriptionModal.setAttribute("class", "modalDescription");
-          infoModal.setAttribute("class", "modalInfo");
-          tagsModal.setAttribute("class", "modalTags");
-
-          titleModal.textContent = propertiesChamp.title;
-          nameModal.textContent = propertiesChamp.name;
-          descriptionModal.textContent = propertiesChamp.blurb;
-          infoModal.textContent = " Info:" + Object.entries(propertiesChamp.info);
-          tagsModal.textContent = "Roles: " + propertiesChamp.tags;
-
-          modal.appendChild(imgChampion);
-          modal.appendChild(titleModal);
-          modal.appendChild(nameModal);
-          modal.appendChild(descriptionModal);
-          modal.appendChild(infoModal);
-          modal.appendChild(tagsModal);
-         
-          modalContainer.appendChild(modal);
-      })
-    }
-
-}
-    showingChamps((Object.entries(data.data)), storage, modalContainer);
+      //FUNCION SORT AZ-ZA
+      document.getElementById("order").addEventListener("change", (e) => {
+    
+        let ele = e.target.value;
+      orderChampions(data.data, propChamp.name, ele);
+      
+      //console.log(element.target.value)
+    
+    });
+   
 });
+    
+
 
 
 //AL DAR CLICK EN ESTADISTICA CAMBIO IMAGEN FONDO ETC
@@ -121,7 +121,9 @@ function(){
 }
 )
 
-//AL HACER CLICK EN EL MODAL:
+
+
+//AL HACER CLICK EN EL MODAL: no modificado, no funciona
 
 document.getElementById("modalContainer").addEventListener("click",
 function(){
@@ -133,66 +135,59 @@ document.getElementById("order").addEventListener("change", (element) => {
     //console.log(element.target.value)
 
     //let ordering;
+
+    let trial =Object.keys(data.data)
     
     if(element.target.value == "aZ"){
        //ordering = true
         
-        let trial =Object.keys(data.data)
+        
         //console.log(trial)
         
-        trial.sort((a,b)=>{ 
-            //const nameA = a.name.toLowerCase();
-            //const nameB = b.name.toLowerCase();
+        // trial.sort((a,b)=>{ 
+        //     //const nameA = a.name.toLowerCase();
+        //     //const nameB = b.name.toLowerCase();
 
-            if (a>b){
-                return 1;
-            }
-            if (a<b){
-                return -1;
-            }
+        //     if (a>b){
+        //         return 1;
+        //     }
+        //     if (a<b){
+        //         return -1;
+        //     }
 
-            return 0;
+        //     return 0;
 
             
-        })
-        console.log(trial)
+        // })
+        // console.log(trial)
 
+        console.log(trial);
+        console.log(typeof trial);// trial es un array de strings
+        console.log(trial[3]);
 
-        for (let keys in trial) {
+        // for (let keys in trial) {
   
-            let objectChampions = trial[keys];
-            //  console.log(objectChampions);
+        //     let objectChampions = trial[keys];
+        //     console.log(typeof objectChampions);
               
-            let propertiesChamp = objectChampions;
-
-            //console.log(propertiesChamp);
+         
   
-            propertiesChamp.sort((a,b)=>{ 
-                const nameA = a.name.toLowerCase();
-                const nameB = b.name.toLowerCase();
+            trial.sort((a,b)=>{ 
+                const nameA = trial.toLowerCase();
+                const nameB = trial.toLowerCase();
 
                 if (nameA>nameB){
                     return 1;
-                }
-                if (nameA<nameB){
+
+                }else { 
                     return -1;
-                }
-
-                return 0;
-
-                
-            })
-            //console.log(propertiesChamp)
+                }     
+       
+             });            
         }
-          
-  
-    } else { 
-        return 
-    }
     
-  
-
-})
+});
+    
 
 //CODIGO FARES
    //function prueba1 (arreglo, domElement, sentido){
