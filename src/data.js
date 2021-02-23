@@ -4,51 +4,57 @@
 
 export const filterChampions = (data, condition) => {
 
-  return Object.entries(data) ;
-
-}
+  data.filter(data => data.includes(condition));
+  
+};
 
 export const computeStats = (data) => {
-
+  
   return Object.entries(data) ;
 
 }
 
 
-export const orderChampions = (data, sortBy, sortOrder) => {
-  if ( /*sortBy == "name" &&*/ sortOrder == "aZ"){
+export const orderChampions = (data, sortOrder) => {
+  //console.log(data)
+  if ( sortOrder == "aZ"){
     
-    return sortBy.sort((a,b)=>{
-      console.log(a.name);
-      console.log(b.name);
-      if (a.name>b.name){
-        
-
-        return 1;
-    }
-    if (a.name<b.name){
+    const result = data.sort((a,b)=>{
+        // console.log(a.name);
+        // console.log(b.name);
+      if (b > a){
         return -1;
     }
-
-    return 0;
-
-    })
-  }
-  if ( /* sortBy == "name" && */ sortOrder == "zA"){
-    return sortBy.sort((a,b)=>{
-      if (a.name>b.name){
-        return -1;
-    }
-    if (a.name<b.name){
+      if (b < a){
         return 1;
     }
 
     return 0;
 
     });
+    //console.log(result);
+    return result;
+    
+  } else {
 
+    const result = data.sort((a,b)=>{
+      // console.log(a.name);
+      // console.log(b.name);
+    if (b > a){
+      return 1;
+  }
+    if (b < a){
+      return -1;
+  }
 
-}}
+  return 0;
+
+  });
+   //console.log(result);
+  return result;
+  }
+  
+}
 
 export const filterRoles = (data, condition) => {
 
