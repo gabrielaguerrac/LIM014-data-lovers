@@ -1,20 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Benne&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gelasio:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-* {
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
+
+*{
     margin: 0;
-    text-decoration: none;
-    list-style: none;
+    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
 }
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  .modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: none;
+    
+  }
+
+  .modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+  }
+
+  .modalDialog > section {
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    margin: 3% auto;
+    padding: 20px;
+    border-radius: 3px;
+    background: black;
+    border: 3px solid rgba(161, 97, 35, 1) ;
+    
+    
+  }
+
+  .modalTitle{
+      text-align: center;
+      color: white;
+      font-size: 25px;
+      font-family: 'Crimson Text', serif;
+  }
+
+  .modalName{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Cinzel Decorative', cursive;
+    color:rgb(241, 204, 111);
+  }
+
+  .modalBlurb, .modalTags, .modalInfo, p{
+      color: white;
+      font-family:'Roboto', sans-serif; 
+  }
+
+ .modalInfo{
+    margin-left: 30%;
+ }
+
+ th, td{
+    border: 1px solid rgb(207, 156, 26);
+    padding: 10px;
+    text-align: center;
+    
+ }
+
+
+  .close {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(207, 156, 26);;
+    color: #fff;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 34px;
+    height: 34px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+    padding-top: 5px;
+  }
+  .close:hover {
+    background: #fa3f6f;
+  }
+
+
 
 body {
 background-image: url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg");
@@ -123,10 +223,11 @@ a.active, a:hover {
 
 #logoLol {
     padding-left: 7%;
-    height:400px;
+    height:420px;
     padding-bottom: 6%;
     margin-top: 15%;
 }
+
 
 
 
@@ -148,13 +249,13 @@ a.active, a:hover {
 
 
 
-input,select {
+select, input {
     background: none ;
     border: 3px solid #FFB800;
     box-sizing: border-box;
     /* margin: 0 20px; */
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-family: 'Benne', serif;
     color:  #FFB800; 
     /* margin-top: 12px;
     /* margin-left: 5%; 
@@ -174,11 +275,6 @@ input,select {
     margin-left: 10%;
 }
 
-#search {
-    display: inline-block;
-    
-}
-
 .searchGlass {
     color: #FFB800;
     display: inline;
@@ -188,15 +284,16 @@ input,select {
 
 
 
-footer{
-    position:fixed;
+footer{ 
+    height: 30px;
     left: 0;
-    bottom: 4%;
+    margin-bottom: 1%;
     width: 100%;
     background-color: transparent;
     color: white;
     text-align: right;
-    padding-right: 3%;
+    padding: 1em;
+    
 }
 
 .page2-Champions{
@@ -222,7 +319,7 @@ footer{
     justify-content: center;
 }
 
-.cardContainer{
+article{
     display:inline-flex;
     height: 273px; 
     width: 250px;
@@ -234,7 +331,20 @@ footer{
     box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.788);
 }
 
-.cardImg{
+#storageList{
+    display:inline-flex;
+    height: 273px; 
+    width: 250px;
+    margin: 15.7px;
+    background: rgba(161, 97, 35, 1) ;
+    color: rgb(241, 204, 111);
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.788);
+}
+
+
+.card{
     height: 250px; 
     width: 250px;
     object-fit: cover;
@@ -247,11 +357,28 @@ h3{
     font-family: 'Cinzel Decorative', cursive;
 }
 
-.cardContainer:hover{
-    box-shadow:
+article:hover{
+    box-shadow: 
     0 0 15px rgb(73, 13, 112),
-    0 0 15PX rgb(12, 14, 155);
+    0 0 15PX rgb(12, 14, 155); 
 }
+
+/* footer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background:transparent;
+    width: 100vw;
+    height: 4%;
+    color: #fff;
+    display: flex; 
+    text-align: right;
+    font-size: 15px;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    align-self: flex-end;
+} */
 
 #modalContainer{
     position: absolute;
@@ -262,10 +389,9 @@ h3{
     justify-content: center;
     align-items: center;
     
-    
 }
 
-.modal{
+/* .modal{
     object-fit: cover;
     position:absolute;
     position:fixed;
@@ -276,45 +402,20 @@ h3{
     background-color: black;
     border: 3px solid rgba(161, 97, 35, 1) ;
     color: white;
-}
+} */
 
 
 .modalImg{
     object-fit: cover;
-    width: 100%;
-    height: 65%;
+    width: 90%;
+    height: 60%;
     position: relative;
     z-index:1;
-    padding:1%;
+    padding-left:10%;
+    align-items:center;
+    
 
 }
-
-h2{
-    position: relative;
-    font-size: 20px;
-    text-align: center;
-    padding-bottom: 0.5%;
-    font-family: 'Gelasio', serif;
-    font-weight: 80;
-}
-
-.modalName{
-    position: relative;
-    font-size: 30px;
-    text-align: center;
-    padding-bottom: 0.5%;
-    color: rgb(241, 204, 111);
-    font-family: 'Cinzel Decorative', cursive;
-}
-
-.modal p{
-    text-align: justify;
-    padding: 1% 1%;
-    font-size: 15px;
-    font-family: 'Roboto', sans-serif;
-} 
-
-
 
 
 
@@ -398,6 +499,7 @@ h2{
         display: flex;
         justify-content: center;
     }
+
     
     
 }
@@ -487,8 +589,7 @@ h2{
         padding:1.5%;
     }
 
-    footer{
-        color:black;
-    }
+   
+  
 
 }
