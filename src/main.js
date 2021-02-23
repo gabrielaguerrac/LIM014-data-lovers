@@ -33,7 +33,7 @@ document.getElementById("champions").addEventListener("click", function() {
             //console.log(typeof objectChampions);
             
             let propertiesChamp = objectChampions[1];
-            console.log(typeof propertiesChamp);
+            //console.log(typeof propertiesChamp);
                 
             const article = document.createElement('article');
             article.setAttribute("class", "cardContainer");
@@ -129,70 +129,87 @@ function(){
 }
 )
 
-document.getElementById("order").addEventListener("change", (element) => {
-    //console.log(element.target.value)
+// document.getElementById("order").addEventListener("change", (element) => {
 
-    //let ordering;
-    
-    if(element.target.value == "aZ"){
-       //ordering = true
+//     if(element.target.value == "Za"){
         
-        let trial =Object.keys(data.data)
-        //console.log(trial)
+//         let trial =Object.keys(data.data)
+//         //console.log(trial)
         
-        trial.sort((a,b)=>{ 
-            //const nameA = a.name.toLowerCase();
-            //const nameB = b.name.toLowerCase();
+//         trial.sort((a,b)=>{ 
+//             //const nameA = a.name.toLowerCase();
+//             //const nameB = b.name.toLowerCase();
 
-            if (a>b){
-                return 1;
-            }
-            if (a<b){
-                return -1;
-            }
+//             if (a>b){
+//                 return 1;
+//             }
+//             if (a<b){
+//                 return -1;
+//             }
 
-            return 0;
+//             return 0;
 
             
-        })
-        console.log(trial)
+//         })
+//         console.log(trial)
 
 
-        for (let keys in trial) {
+//         for (let keys in trial) {
   
-            let objectChampions = trial[keys];
-            //  console.log(objectChampions);
+//             let objectChampions = trial[keys];
+//             //  console.log(objectChampions);
               
-            let propertiesChamp = objectChampions;
+//             let propertiesChamp = objectChampions;
 
-            //console.log(propertiesChamp);
+//             //console.log(propertiesChamp);
   
-            propertiesChamp.sort((a,b)=>{ 
-                const nameA = a.name.toLowerCase();
-                const nameB = b.name.toLowerCase();
+//             propertiesChamp.sort((a,b)=>{ 
+//                 const nameA = a.name.toLowerCase();
+//                 const nameB = b.name.toLowerCase();
 
-                if (nameA>nameB){
-                    return 1;
-                }
-                if (nameA<nameB){
-                    return -1;
-                }
+//                 if (nameA>nameB){
+//                     return 1;
+//                 }
+//                 if (nameA<nameB){
+//                     return -1;
+//                 }
 
-                return 0;
+//                 return 0;
 
                 
-            })
-            //console.log(propertiesChamp)
-        }
+//             })
+//             //console.log(propertiesChamp)
+//         }
           
   
-    } else { 
-        return 
-    }
+//     } else { 
+//         return 
+//     }
     
   
 
-})
+// })
+
+document.getElementById("allRoles").addEventListener("change", (element) => {
+
+    if(element.target.value == "assassin"){
+
+        let role = Object.entries(data.data)
+        console.log ( role)
+
+        var newArr =  role[01].filter(function(element) {
+
+            let trial = 
+            return(trial)
+        }
+        
+        );
+        console.log(newArr)
+    }
+
+});
+
+displayCharacters(data.data)
 
 //CODIGO FARES
    //function prueba1 (arreglo, domElement, sentido){
