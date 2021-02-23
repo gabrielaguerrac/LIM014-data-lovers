@@ -6,7 +6,7 @@
 
 //import { allDataChampions } from './data.js';
 import data from './data/lol/lol.js';
-import {orderChampions, filterRoles} from './data.js';
+import {orderChampions, filterChampions } from './data.js';
 
 
 
@@ -14,6 +14,7 @@ document.getElementById("firstNavigator").style.display= "block";
 document.getElementById("secondNavigator").style.display= "none";
 document.getElementById("storage").style.display="none";
 document.getElementById("modalContainer").style.display = "none";
+document.querySelector(".aboutLol").style.display = "none";
 
 const storage = document.getElementById('storage');
 const searchBar = document.getElementById("searchBar");
@@ -85,7 +86,7 @@ document.getElementById("champions").addEventListener("click", function() {
         
         let filteredChampions = entries.filter(element => {
           let propChamp =  element[1];
-          console.log(propChamp);
+          //console.log(propChamp);
          return propChamp.name.toLowerCase().includes(searchValue);
         })
         showChampions(filteredChampions);
@@ -100,42 +101,42 @@ document.getElementById("champions").addEventListener("click", function() {
         if(roleSelected == 'All'){
             showChampions(entries);
         }else{
-        //console.log(roleSelected);
+          //console.log(roleSelected);
+
         const filterRoles= entries.filter(element => {
           let propChamp =  element[1];
-          console.log(propChamp);
-         // console.log(propChamp.tags[0]);
-         //console.log(propChamp.tags[1]);
-         let dos = propChamp.tags;
+          let dos = propChamp.tags;
          return dos.includes(roleSelected);
                 
-        }
-        )
-        showChampions(filterRoles);
-        }
+        })
+
         
-      });
+        showChampions(filterRoles);
+       
+        }
+        });
+        
+      
 
       //FUNCION SORT AZ-ZA
       document.getElementById("order").addEventListener("change", (e) => {
-        //console.log(entries);
-        let propChamp;
-        let ele = e.target.value;
-        for(let prueba in entries){
-            let propChampion = entries[prueba];
-            propChamp = propChampion[1];
-            
-            //console.log(propChamp.name);
-
-            orderChampions(entries, propChamp.name, ele);
-        }
         
-       // 
-      
-      
-      //console.log(element.target.value)
-    
-    });
+        let ele = e.target.value;
+        let dataKeys =Object.keys(data.data);
+        //for(let prueba in dataKeys){
+            // console.log(prueba)
+            //let propChampion = dataKeys[prueba];
+            //let propChamp = propChampion[1];
+
+            // orderChampions(propChampion,ele)
+            // console.log();
+        //}
+        
+        let orderedChamps = orderChampions(dataKeys,ele)
+        console.log(orderedChamps)
+        //orderChampions(,ele)
+    } 
+    );
    
 });
     
@@ -161,6 +162,8 @@ document.getElementById("about").addEventListener("click", function() {
     document.getElementById("body").classList.remove("page3-Statistics");
     document.getElementById("body").classList.remove("page2-Champions");
     document.getElementById("storage").style.display= "none";
+    document.querySelector(".aboutLol").style.display= "block";
+
    //const dataAllChampions = Object.values(data);
    
 });
