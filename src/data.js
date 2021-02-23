@@ -2,11 +2,20 @@
 
 
 
-export const filterChampions = (data, condition) => {
 
-  return Object.entries(data) ;
+export const filterChampions = (data) => {
+  const filterRoles= data.filter(element => {
+    let propChamp =  element[1];
+    console.log(propChamp);
+   // console.log(propChamp.tags[0]);
+   //console.log(propChamp.tags[1]);
+   let dos = propChamp.tags;
+   return dos.includes(filterRoles);
+          
+  })}
+  
 
-}
+
 
 export const computeStats = (data) => {
 
@@ -18,9 +27,9 @@ export const computeStats = (data) => {
 export const orderChampions = (data, sortBy, sortOrder) => {
   if ( /*sortBy == "name" &&*/ sortOrder == "aZ"){
     
-    return sortBy.sort((a,b)=>{
-      console.log(a.name);
-      console.log(b.name);
+    return data.sort((a,b)=>{
+      console.log(a.sortBy);
+      console.log(b.sortBy);
       if (a.name>b.name){
         
 

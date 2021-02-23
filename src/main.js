@@ -6,7 +6,7 @@
 
 //import { allDataChampions } from './data.js';
 import data from './data/lol/lol.js';
-import {orderChampions, filterRoles} from './data.js';
+import {orderChampions, filterChampions, filterRoles} from './data.js';
 
 
 
@@ -96,25 +96,29 @@ document.getElementById("champions").addEventListener("click", function() {
     //FUNCION BUSCAR X ROLES
       document.getElementById("allRoles").addEventListener("change", (e)=>{
         const roleSelected = e.target.value;
+        const filterRoles;
         //console.log(e);
         if(roleSelected == 'All'){
             showChampions(entries);
         }else{
         //console.log(roleSelected);
-        const filterRoles= entries.filter(element => {
-          let propChamp =  element[1];
-          console.log(propChamp);
-         // console.log(propChamp.tags[0]);
-         //console.log(propChamp.tags[1]);
-         let dos = propChamp.tags;
-         return dos.includes(roleSelected);
+         filterRoles = filterChampions(entries, roleSelected);
+
+        // const filterRoles= entries.filter(element => {
+        //   let propChamp =  element[1];
+        //   console.log(propChamp);
+        //  // console.log(propChamp.tags[0]);
+        //  //console.log(propChamp.tags[1]);
+        //  let dos = propChamp.tags;
+        //  return dos.includes(roleSelected);
                 
+        //}
+        //
         }
-        )
         showChampions(filterRoles);
-        }
+        });
         
-      });
+    
 
       //FUNCION SORT AZ-ZA
       document.getElementById("order").addEventListener("change", (e) => {
@@ -127,7 +131,7 @@ document.getElementById("champions").addEventListener("click", function() {
             
             //console.log(propChamp.name);
 
-            orderChampions(entries, propChamp.name, ele);
+            orderChampions(entries[1], propChamp.name, ele);
         }
         
        // 
