@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rokkitt:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Benne&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gelasio:wght@500&display=swap');
+
 
 *{
     margin: 0;
@@ -12,6 +11,110 @@
     text-decoration: none;
     list-style: none;
 }
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  .modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: none;
+    
+  }
+
+  .modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+  }
+
+  .modalDialog > section {
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    margin: 3% auto;
+    padding: 20px;
+    border-radius: 3px;
+    background: black;
+    border: 3px solid rgba(161, 97, 35, 1) ;
+    
+    
+  }
+
+  .modalTitle{
+      text-align: center;
+      color: white;
+      font-size: 25px;
+      font-family: 'Crimson Text', serif;
+  }
+
+  .modalName{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Cinzel Decorative', cursive;
+    color:rgb(241, 204, 111);
+  }
+
+  .modalBlurb, .modalTags, .modalInfo, p{
+      color: white;
+      font-family:'Roboto', sans-serif; 
+  }
+
+ .modalInfo{
+    margin-left: 30%;
+ }
+
+ th, td{
+    border: 1px solid rgb(207, 156, 26);
+    padding: 10px;
+    text-align: center;
+    
+ }
+
+
+  .close {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(207, 156, 26);;
+    color: #fff;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 34px;
+    height: 34px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+    padding-top: 5px;
+  }
+  .close:hover {
+    background: #fa3f6f;
+  }
+
+
 
 body {
 background-image: url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg");
@@ -255,9 +358,9 @@ h3{
 }
 
 article:hover{
-    box-shadow:
+    box-shadow: 
     0 0 15px rgb(73, 13, 112),
-    0 0 15PX rgb(12, 14, 155);
+    0 0 15PX rgb(12, 14, 155); 
 }
 
 /* footer{
@@ -288,7 +391,7 @@ article:hover{
     
 }
 
-.modal{
+/* .modal{
     object-fit: cover;
     position:absolute;
     position:fixed;
@@ -299,16 +402,18 @@ article:hover{
     background-color: black;
     border: 3px solid rgba(161, 97, 35, 1) ;
     color: white;
-}
+} */
 
 
 .modalImg{
     object-fit: cover;
-    width: 100%;
-    height: 65%;
+    width: 90%;
+    height: 60%;
     position: relative;
     z-index:1;
-    padding:1%;
+    padding-left:10%;
+    align-items:center;
+    
 
 }
 

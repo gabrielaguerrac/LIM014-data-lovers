@@ -35,11 +35,44 @@ document.getElementById("champions").addEventListener("click", function() {
           
           //console.log(element);
             let propChamp =  element[1];
+            let tags = Object.values(propChamp.tags);
+            let infoKeys = Object.keys(propChamp.info);
+            let infoValues = Object.values(propChamp.info);
+            //console.log(info);
             // console.log(propChamp);  
-          return   `<article class=${propChamp.name}>
-          <img class="card" src="${propChamp.splash}"></img>
-          <h3>${propChamp.name}</h3> 
-          </article>`         
+          return   `
+          <article class=${propChamp.name}>
+            <a  href="#${propChamp.key}">
+                <img class="card" src="${propChamp.splash}"></img>
+            </a>
+            <h3>${propChamp.name}</h3> 
+          </article>   
+          
+          <section id="${propChamp.key}" class="modalDialog">
+            <section>
+                <a href="#close" title="Close" class="close">X</a>
+                <img class="modalImg" src="${propChamp.splash}"></img>
+                <p class="modalTitle">${propChamp.title}</p>
+                <h2 class="modalName">${propChamp.name}</h2>
+                <p class="modalBlurb">· ${propChamp.blurb}</p>
+                <p class="modalTags">· Roles: ${tags}</p>
+                <table class="modalInfo"> 
+                    <tr>
+                        <th>${infoKeys[0]}</th>
+                        <th>${infoKeys[1]}</th>
+                        <th>${infoKeys[2]}</th>
+                        <th>${infoKeys[3]}</th>
+                    </tr>
+                    <tr>
+                        <td>${infoValues[0]}</td>
+                        <td>${infoValues[1]}</td>
+                        <td>${infoValues[2]}</td>
+                        <td>${infoValues[3]}</td>
+                    </tr>
+                </table>
+                
+            </section>
+         </section>`
         } )
        // console.log(htmlString);
         storage.innerHTML = htmlString;  
@@ -63,25 +96,42 @@ document.getElementById("champions").addEventListener("click", function() {
     //FUNCION BUSCAR X ROLES
       document.getElementById("allRoles").addEventListener("change", (e)=>{
         const roleSelected = e.target.value;
-        console.log(e);
+        //console.log(e);
+        if(roleSelected == 'All'){
+            showChampions(entries);
+        }else{
         //console.log(roleSelected);
         const filterRoles= entries.filter(element => {
           let propChamp =  element[1];
+          console.log(propChamp);
          // console.log(propChamp.tags[0]);
          //console.log(propChamp.tags[1]);
-         let dos = propChamp.tags[0]|| propChamp.tags[1]
+         let dos = propChamp.tags;
          return dos.includes(roleSelected);
                 
         }
         )
         showChampions(filterRoles);
+        }
+        
       });
 
       //FUNCION SORT AZ-ZA
       document.getElementById("order").addEventListener("change", (e) => {
-    
+        //console.log(entries);
+        let propChamp;
         let ele = e.target.value;
-      orderChampions(data.data, propChamp.name, ele);
+        for(let prueba in entries){
+            let propChampion = entries[prueba];
+            propChamp = propChampion[1];
+            
+            //console.log(propChamp.name);
+
+            orderChampions(entries, propChamp.name, ele);
+        }
+        
+       // 
+      
       
       //console.log(element.target.value)
     
@@ -131,62 +181,62 @@ function(){
 }
 )
 
-document.getElementById("order").addEventListener("change", (element) => {
-    //console.log(element.target.value)
+// document.getElementById("order").addEventListener("change", (element) => {
+//     //console.log(element.target.value)
 
-    //let ordering;
+//     //let ordering;
 
-    let trial =Object.keys(data.data)
+//     let trial =Object.keys(data.data)
     
-    if(element.target.value == "aZ"){
-       //ordering = true
+//     if(element.target.value == "aZ"){
+//        //ordering = true
         
-        
-        //console.log(trial)
-        
-        // trial.sort((a,b)=>{ 
-        //     //const nameA = a.name.toLowerCase();
-        //     //const nameB = b.name.toLowerCase();
 
-        //     if (a>b){
-        //         return 1;
-        //     }
-        //     if (a<b){
-        //         return -1;
-        //     }
+//         //console.log(trial)
+        
+//         // trial.sort((a,b)=>{ 
+//         //     //const nameA = a.name.toLowerCase();
+//         //     //const nameB = b.name.toLowerCase();
 
-        //     return 0;
+//         //     if (a>b){
+//         //         return 1;
+//         //     }
+//         //     if (a<b){
+//         //         return -1;
+//         //     }
+
+//         //     return 0;
 
             
-        // })
-        // console.log(trial)
+//         // })
+//         // console.log(trial)
 
-        console.log(trial);
-        console.log(typeof trial);// trial es un array de strings
-        console.log(trial[3]);
+//         console.log(trial);
+//         console.log(typeof trial);// trial es un array de strings
+//         console.log(trial[3]);
 
-        // for (let keys in trial) {
+//         // for (let keys in trial) {
   
-        //     let objectChampions = trial[keys];
-        //     console.log(typeof objectChampions);
+//         //     let objectChampions = trial[keys];
+//         //     console.log(typeof objectChampions);
               
          
   
-            trial.sort((a,b)=>{ 
-                const nameA = trial.toLowerCase();
-                const nameB = trial.toLowerCase();
+//             trial.sort((a,b)=>{ 
+//                 const nameA = trial.toLowerCase();
+//                 const nameB = trial.toLowerCase();
 
-                if (nameA>nameB){
-                    return 1;
+//                 if (nameA>nameB){
+//                     return 1;
 
-                }else { 
-                    return -1;
-                }     
+//                 }else { 
+//                     return -1;
+//                 }     
        
-             });            
-        }
+//              });            
+//         }
     
-});
+
     
 
 //CODIGO FARES

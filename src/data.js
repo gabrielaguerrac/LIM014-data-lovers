@@ -16,9 +16,14 @@ export const computeStats = (data) => {
 
 
 export const orderChampions = (data, sortBy, sortOrder) => {
-  if ( sortBy == "name" && sortOrder == "aZ"){
-    return data.sort((a,b)=>{
+  if ( /*sortBy == "name" &&*/ sortOrder == "aZ"){
+    
+    return sortBy.sort((a,b)=>{
+      console.log(a.name);
+      console.log(b.name);
       if (a.name>b.name){
+        
+
         return 1;
     }
     if (a.name<b.name){
@@ -29,8 +34,8 @@ export const orderChampions = (data, sortBy, sortOrder) => {
 
     })
   }
-  if ( sortBy == "name" && sortOrder == "zA"){
-    return data.sort((a,b)=>{
+  if ( /* sortBy == "name" && */ sortOrder == "zA"){
+    return sortBy.sort((a,b)=>{
       if (a.name>b.name){
         return -1;
     }
