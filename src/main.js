@@ -94,26 +94,35 @@ document.getElementById("champions").addEventListener("click", function() {
       });
     
 
-    //FUNCION BUSCAR X ROLES
+    //FUNCION FILTER X ROL
       document.getElementById("allRoles").addEventListener("change", (e)=>{
         const roleSelected = e.target.value;
-        //console.log(e);
+
         if(roleSelected == 'All'){
-            showChampions(entries);
+            //showChampions(entries);//cambiar
+            //console.log("hago algo cuando seleccionas All");
+            return showChampions(entries); //devuelve un objeto
         }else{
-          //console.log(roleSelected);
-
-        const filterRoles= entries.filter(element => {
-          let propChamp =  element[1];
-          let dos = propChamp.tags;
-         return dos.includes(roleSelected);
-                
-        })
-
+        //const filterRoles;
+        //console.log(e);
+        let filterRoles = (filterChampions(entries, roleSelected));
         
+        // if(roleSelected == 'All'){
+        //     showChampions(entries);
+        // }else{
+        //   //console.log(roleSelected);
+
+        // const filterRoles= entries.filter(element => {
+        //   let propChamp =  element[1];
+        //   let dos = propChamp.tags;
+        //  return dos.includes(roleSelected);
+                
+        // })
+
+        console.log(typeof filterRoles);
         showChampions(filterRoles);
-       
         }
+      
         });
         
       
@@ -131,8 +140,10 @@ document.getElementById("champions").addEventListener("click", function() {
             // orderChampions(propChampion,ele)
             // console.log();
         //}
+        // let name = dataKeys.name;
+        // console.log()
         
-        let orderedChamps = orderChampions(dataKeys,ele)
+        let orderedChamps = orderChampions(dataKeys, ele)
         console.log(orderedChamps)
         //orderChampions(,ele)
     } 
