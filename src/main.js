@@ -143,9 +143,10 @@ document.getElementById("champions").addEventListener("click", function() {
         // let name = dataKeys.name;
         // console.log()
         
-        let orderedChamps = orderChampions(dataKeys, ele)
+        let orderedChamps = (orderChampions(entries, ele));
         console.log(orderedChamps)
         //orderChampions(,ele)
+        showChampions(orderedChamps);
     } 
     );
    
