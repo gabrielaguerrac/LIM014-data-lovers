@@ -32,6 +32,9 @@ return filterRoles;
 
 export const computeStats = (data) => {
   
+  const result = data.sort((a,b)=>{
+   // return {b-a};
+  })
   return Object.entries(data) ;
 
 }
@@ -78,12 +81,12 @@ export const orderChampions = (data, sortOrder) => {
   
 }
 
-export const filterRoles = (data, condition) => {
+// export const filterRoles = (data, condition) => {
 
-  Object.entries(data.data).filter(element => {
-  let propChamp =  element[1];
-  console.log(propChamp);
- return propChamp.tags[0].includes(condition);
-});
-//showChampions(filter);
-}
+//   Object.entries(data.data).filter(element => {
+//   let propChamp =  element[1];
+//   console.log(propChamp);
+//  return propChamp.tags[0].includes(condition);
+// });
+// //showChampions(filter);
+// }

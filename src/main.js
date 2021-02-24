@@ -107,6 +107,7 @@ document.getElementById("champions").addEventListener("click", function() {
         //console.log(e);
         let filterRoles = (filterChampions(entries, roleSelected));
         
+
         // if(roleSelected == 'All'){
         //     showChampions(entries);
         // }else{
@@ -121,6 +122,17 @@ document.getElementById("champions").addEventListener("click", function() {
 
         console.log(typeof filterRoles);
         showChampions(filterRoles);
+        
+        document.getElementById("order").addEventListener("change", (e) => {
+            let ele = e.target.value;
+            //let dataKeys = filterRoles;
+
+            let orderedChamps = (orderChampions(filterRoles, ele));
+            console.log(orderedChamps)
+            //orderChampions(,ele)
+            showChampions(orderedChamps);
+        } 
+        );
         }
       
         });
