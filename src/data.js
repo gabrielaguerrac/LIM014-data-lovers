@@ -3,9 +3,32 @@
 
 
 
-  data.filter(data => data.includes(condition));
+export const filterChampions = (data, condition) => {
+
   
-};
+  //console.log(roleSelected);
+
+const filterRoles= data.filter(element => {
+  let propChamp =  element[1];
+  //console.log(propChamp);//si hay {version,...}
+  let rolesChampion= propChamp.tags;
+  //console.log(dos); //los tags 1 o 2 de todos los champions
+  //return console.log('soy el return cuando seleccionas mago');
+
+  let filteredByTags = rolesChampion.includes(condition);
+ // console.log(filteredByTags);
+  return filteredByTags;
+   //console.log(dos); //los tags 1 o 2 de todos los champions
+  //return console.log('soy el return cuando seleccionas mago');
+  //  let conCondition = (algo == 'true') ?  console.log('true') : console.log('false');
+  // return console.log(conCondition);//devuelve undefined
+
+});
+return filterRoles;
+
+}
+  
+
 
 export const computeStats = (data) => {
   
