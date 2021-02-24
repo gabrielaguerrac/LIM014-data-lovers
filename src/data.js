@@ -9,8 +9,13 @@ export const filterChampions = (data, condition) => {
 };
 
 export const computeStats = (data) => {
+
+  const result = data.sort((a,b)=>{
+    return a-b
+
+  });
   
-  return Object.entries(data) ;
+  return result;
 
 }
 
