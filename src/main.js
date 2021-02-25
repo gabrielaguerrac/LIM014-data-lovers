@@ -78,10 +78,9 @@ document.getElementById("champions").addEventListener("click", function() {
     searchBar.addEventListener("keyup", (e) =>{
         const searchValue = e.target.value.toLowerCase();
         
-        let filteredChampions = entries.filter(element => {
-          let propChamp =  element[1];
+        let filteredChampions = newData.filter(element => {
           //console.log(propChamp);
-         return propChamp.name.toLowerCase().includes(searchValue);
+         return element.name.toLowerCase().includes(searchValue);
         })
         showChampions(filteredChampions);
         //console.log(filteredChampions);
@@ -129,6 +128,10 @@ document.getElementById("statistics").addEventListener("click", function() {
     document.getElementById("body").classList.remove("page4-InfoAbout");
     document.getElementById("storage").style.display= "none";
    //const dataAllChampions = Object.values(data);
+
+   function (){
+        console.log(newData.element)
+   }
    
 });
 
