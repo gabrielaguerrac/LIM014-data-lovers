@@ -78,12 +78,8 @@ document.getElementById("champions").addEventListener("click", function() {
     searchBar.addEventListener("keyup", (e) =>{
         const searchValue = e.target.value.toLowerCase();
         
-<<<<<<< HEAD
-        let filteredChampions = newData.filter(element => {
-=======
         let filteredChampions = newData.filter(propChamp => {
           
->>>>>>> 566e6a73d13dcbdc4be3ec59ed5e6a760b9aada4
           //console.log(propChamp);
          return element.name.toLowerCase().includes(searchValue);
         })
