@@ -78,7 +78,12 @@ document.getElementById("champions").addEventListener("click", function() {
     searchBar.addEventListener("keyup", (e) =>{
         const searchValue = e.target.value.toLowerCase();
         
+<<<<<<< HEAD
         let filteredChampions = newData.filter(element => {
+=======
+        let filteredChampions = newData.filter(propChamp => {
+          
+>>>>>>> 566e6a73d13dcbdc4be3ec59ed5e6a760b9aada4
           //console.log(propChamp);
          return element.name.toLowerCase().includes(searchValue);
         })
@@ -147,8 +152,60 @@ document.getElementById("about").addEventListener("click", function() {
     document.querySelector(".aboutLol").style.display= "block";
 
    //const dataAllChampions = Object.values(data);
-   
+  let hpArray = newData.map((prueba)=>{
+    //console.log(prueba);
+    // let objetoData ={ //PARA CONSTRUIR TABLA CON STRING TEMPLATES
+    //   name : prueba.name,
+    //   img: prueba.img,
+      
+    // };
+
+    // let valuesStats = Object.values(prueba.stats);
+    // let hpValues = valuesStats[0];
+    // objetoData.hp = hpValues;
+    // //console.log(objetoData);
+    // return objetoData;
+    // for(let hpChampion in hpValues){
+    //   let hpChamp = hpValues[hpChampion];
+    //   console.log(hpChamp);
+    // }
+
+    //array con stats e.g armor de todos en un array y comparar
+
+    let properties = Object.values(prueba.stats); 
+    //console.log(properties); //[stat1, stat2, stat3] [stat1, stat2, stat3] [stat1, stat2, stat3] 134 veces
+    //console.log(properties);
+    let prop;
+    let property = [];
+    for(let i=0; i< properties.length; i++){
+       prop = properties[0];
+       property.push(prop);
+      //console.log(prop);
+      // key = prueba.stats[property];
+      //console.log(key);
+    //  let hpArray=
+    //  hpArray.push(prueba.stats.hp)
+    //console.log((key));
+    }
+    console.log(property.push(prop));
+    
+  //  });
+   //console.log(newData);
+  // function prueba (newData) {
+  //    console.log(Object.values(newData.stats));
+  //   //  let stats = [newData.stats.hp];//es un number uno x linea
+  //   //  let hpArray =[];
+  //   //  //hpArray.concat(stats);
+  //   //  console.log(hpArray.concat(stats));
+     
+     
+  //  }
+  //  prueba(newData);
+
+  
 });
+
+//console.log(hpArray);
 
 
 //RELOAD
@@ -156,7 +213,8 @@ document.getElementById("lolIcon").addEventListener("click",
 function(){
     location.reload();
 }
-)
+);
+});
 
 
 
