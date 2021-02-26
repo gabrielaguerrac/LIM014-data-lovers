@@ -11,7 +11,7 @@ document.querySelector(".aboutLol").style.display = "none";
 
 const storage = document.getElementById("storage");
 const searchBar = document.getElementById("searchBar");
-const entries = Object.entries(data.data);
+//const entries = Object.entries(data.data);
 const newData = Object.values(data.data);
 
 
@@ -78,7 +78,7 @@ document.getElementById("champions").addEventListener("click", function() {
     searchBar.addEventListener("keyup", (e) =>{
         const searchValue = e.target.value.toLowerCase();
         
-        let filteredChampions = newData.filter(propChamp => {
+        let filteredChampions = newData.filter(element => {
           
           //console.log(propChamp);
          return element.name.toLowerCase().includes(searchValue);
@@ -102,7 +102,7 @@ document.getElementById("champions").addEventListener("click", function() {
             document.getElementById("order").addEventListener("change", (e) => {
                 let target = e.target.value;
                 let orderedChamps = (orderChampions(filterRoles,"name", target));
-                console.log(orderedChamps)
+                //console.log(orderedChamps)
                 showChampions(orderedChamps);
             });
         }
@@ -129,10 +129,6 @@ document.getElementById("statistics").addEventListener("click", function() {
     document.getElementById("body").classList.remove("page4-InfoAbout");
     document.getElementById("storage").style.display= "none";
    //const dataAllChampions = Object.values(data);
-
-   function (){
-        console.log(newData.element)
-   }
    
 });
 
@@ -148,7 +144,7 @@ document.getElementById("about").addEventListener("click", function() {
     document.querySelector(".aboutLol").style.display= "block";
 
    //const dataAllChampions = Object.values(data);
-  let hpArray = newData.map((prueba)=>{
+  //let hpArray = newData.map((prueba)=>{
     //console.log(prueba);
     // let objetoData ={ //PARA CONSTRUIR TABLA CON STRING TEMPLATES
     //   name : prueba.name,
@@ -168,22 +164,22 @@ document.getElementById("about").addEventListener("click", function() {
 
     //array con stats e.g armor de todos en un array y comparar
 
-    let properties = Object.values(prueba.stats); 
+    let properties = Object.keys(data.data); 
     //console.log(properties); //[stat1, stat2, stat3] [stat1, stat2, stat3] [stat1, stat2, stat3] 134 veces
     //console.log(properties);
     let prop;
-    let property = [];
+    //let property = [];
     for(let i=0; i< properties.length; i++){
-       prop = properties[0];
-       property.push(prop);
+       prop = properties[i];
+    //    property.push(prop);
       //console.log(prop);
       // key = prueba.stats[property];
-      //console.log(key);
+   
     //  let hpArray=
     //  hpArray.push(prueba.stats.hp)
     //console.log((key));
     }
-    console.log(property.push(prop));
+    // console.log(property.push(prop));
     
   //  });
    //console.log(newData);
@@ -210,7 +206,7 @@ function(){
     location.reload();
 }
 );
-});
+
 
 
 
