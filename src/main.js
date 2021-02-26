@@ -1,5 +1,5 @@
 import data from './data/lol/lol.js';
-import {orderChampions, filterChampions } from './data.js';
+import {orderChampions, filterChampions, computeStats } from './data.js';
 
 
 //VISTA INICIO
@@ -12,7 +12,7 @@ document.querySelector(".aboutLol").style.display = "none";
 const storage = document.getElementById("storage");
 const searchBar = document.getElementById("searchBar");
 const entries = Object.entries(data.data);
-const newData = Object.values(data.data);
+const newData = Object.values(data.data);//{version:...}
 
 
 //VISTA CHAMPIONS
@@ -143,8 +143,68 @@ document.getElementById("about").addEventListener("click", function() {
     document.getElementById("storage").style.display= "none";
     document.querySelector(".aboutLol").style.display= "block";
 
+    //console.log(newData);
+  //FUNCIONA
+  
+  let hp = [];
+   let tabla = newData.forEach((item) => {
+      //console.log(item.stats.hp
+
+
+      hp.push(item.stats.hp);
+
+      //console.log(hp);
+      return `<table> 
+      <tr>
+          <th>${item.name}</th>
+          <th>${item.img}</th>  
+      </tr>
+
+      <tr>
+          <td>${item.stats.hp}</td>
+          <td>${item.title}</td>
+         
+      </tr>
+  </table>`;
+    });
+  document.getElementsByClassName("aboutLol").innerHTML = tabla;
+
+    let minMax = (computeStats(hp));
+    console.log(minMax);
+
+
+
+    
+
+    
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // let arr = [10, 4, 20, 39, 5];
+    // computeStats(arr)
    //const dataAllChampions = Object.values(data);
-  let hpArray = newData.map((prueba)=>{
+  
+   //computeStats(newData);
+   //console.log(statsData);
+  
+  
+  
+  //  
     //console.log(prueba);
     // let objetoData ={ //PARA CONSTRUIR TABLA CON STRING TEMPLATES
     //   name : prueba.name,
@@ -152,49 +212,58 @@ document.getElementById("about").addEventListener("click", function() {
       
     // };
 
-    // let valuesStats = Object.values(prueba.stats);
-    // let hpValues = valuesStats[0];
-    // objetoData.hp = hpValues;
-    // //console.log(objetoData);
-    // return objetoData;
-    // for(let hpChampion in hpValues){
-    //   let hpChamp = hpValues[hpChampion];
-    //   console.log(hpChamp);
-    // }
+//     // let valuesStats = Object.values(prueba.stats);
+//     // let hpValues = valuesStats[0];
+//     // objetoData.hp = hpValues;
+//     // //console.log(objetoData);
+//     // return objetoData;
+//     // for(let hpChampion in hpValues){
+//     //   let hpChamp = hpValues[hpChampion];
+//     //   console.log(hpChamp);
+//     // }}
+   
+// //     //array con stats e.g armor de todos en un array y comparar
 
-    //array con stats e.g armor de todos en un array y comparar
-
-    let properties = Object.values(prueba.stats); 
-    //console.log(properties); //[stat1, stat2, stat3] [stat1, stat2, stat3] [stat1, stat2, stat3] 134 veces
-    //console.log(properties);
-    let prop;
-    let property = [];
-    for(let i=0; i< properties.length; i++){
-       prop = properties[0];
-       property.push(prop);
-      //console.log(prop);
-      // key = prueba.stats[property];
-      //console.log(key);
-    //  let hpArray=
-    //  hpArray.push(prueba.stats.hp)
-    //console.log((key));
-    }
-    console.log(property.push(prop));
-    
+// let hpArray = newData.map((prueba)=>{
+//    let properties = Object.values(prueba.stats); 
+//     console.log(properties); //[stat1, stat2, stat3] [stat1, stat2, stat3] [stat1, stat2, stat3] 134 veces
+//     //console.log(properties);
+//     let prop;
+//     let property = [];
+//     for(let i=0; i< properties.length; i++){
+//        prop = properties[0];
+//        property.push(prop);
+//       //console.log(prop);
+//       // key = prueba.stats[property];
+//       //console.log(key);
+//     //  let hpArray=
+//     //  hpArray.push(prueba.stats.hp)
+//     //console.log((key));
+//     }
+//     console.log(property.push(prop));
+//   });
   //  });
-   //console.log(newData);
-  // function prueba (newData) {
-  //    console.log(Object.values(newData.stats));
-  //   //  let stats = [newData.stats.hp];//es un number uno x linea
-  //   //  let hpArray =[];
-  //   //  //hpArray.concat(stats);
-  //   //  console.log(hpArray.concat(stats));
+//    //console.log(newData);
+//   // function prueba (newData) {
+//   //    console.log(Object.values(newData.stats));
+//   //   //  let stats = [newData.stats.hp];//es un number uno x linea
+//   //   //  let hpArray =[];
+//   //   //  //hpArray.concat(stats);
+//   //   //  console.log(hpArray.concat(stats));
      
      
-  //  }
-  //  prueba(newData);
+//   //  }
+//   //  prueba(newData);
+//   let htmlString = champions.map((propChamp)  => {
+//     console.log(propChamp);
+      
+//       let tags = Object.values(propChamp.tags);
+//       let infoKeys = Object.keys(propChamp.info);
+//       let infoValues = Object.values(propChamp.info);
 
   
+// });
+// })});
 });
 
 //console.log(hpArray);
@@ -206,7 +275,7 @@ function(){
     location.reload();
 }
 );
-});
+
 
 
 
