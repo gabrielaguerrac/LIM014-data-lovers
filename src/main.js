@@ -11,7 +11,7 @@ document.querySelector(".aboutLol").style.display = "none";
 
 const storage = document.getElementById("storage");
 const searchBar = document.getElementById("searchBar");
-const entries = Object.entries(data.data);
+//const entries = Object.entries(data.data);
 const newData = Object.values(data.data);//{version:...}
 
 
@@ -26,7 +26,7 @@ document.getElementById("champions").addEventListener("click", function() {
     
     const showChampions = (champions) => {
         let htmlString = champions.map((propChamp)  => {
-          console.log(propChamp);
+          //console.log(propChamp);
             
             let tags = Object.values(propChamp.tags);
             let infoKeys = Object.keys(propChamp.info);
@@ -113,7 +113,7 @@ document.getElementById("champions").addEventListener("click", function() {
         
         let target = e.target.value;
         let orderedChamps = (orderChampions(newData, "name", target));
-        //console.log(orderedChamps)
+        console.log(orderedChamps)
         showChampions(orderedChamps);
     });   
  
@@ -146,48 +146,38 @@ document.getElementById("about").addEventListener("click", function() {
     //console.log(newData);
   //FUNCIONA
   
-  let hp = [];
-   let tabla = newData.forEach((item) => {
-      //console.log(item.stats.hp
+ let hp = [];
+   let table = newData.map((propChamp) => {
 
+      //console.log(item.stats.hp)
+   // console.log(item.name)
+   return hp.push(propChamp.stats.hp)
+   });
+});
 
-      hp.push(item.stats.hp);
+    
+   //console.log(hp)
 
-      //console.log(hp);
-      return `<table> 
-      <tr>
-          <th>${item.name}</th>
-          <th>${item.img}</th>  
-      </tr>
-
-      <tr>
+    // let pintar = computeStats(hp){
+    
+    //   return pintar};
+      /* `<table id="sect"> 
+    
+          <tr>${item.name}</tr>
+          <tr><img src="${item.img}"></img></tr> 
+    
+      
           <td>${item.stats.hp}</td>
-          <td>${item.title}</td>
+        
          
-      </tr>
-  </table>`;
-    });
-  document.getElementsByClassName("aboutLol").innerHTML = tabla;
+  </table>` */
+  
+    // }) ;
+   /*  console.log(computeStats(hp));
+    document.getElementById("aboutLol").innerHTML = table;
 
     let minMax = (computeStats(hp));
-    console.log(minMax);
-
-
-
-    
-
-    
-  
-
-
-    
-
-
-
-
-
-
-
+    //console.log(minMax); */
 
 
 
@@ -204,9 +194,9 @@ document.getElementById("about").addEventListener("click", function() {
   
   
   
-  //  
+  //   let hpArray = newData.map((prueba)=>{
     //console.log(prueba);
-    // let objetoData ={ //PARA CONSTRUIR TABLA CON STRING TEMPLATES
+    // let objetoData ={ //PARA CONSTRUIR TABLA CON STRING TEMPLATES - CODIGO BETSY
     //   name : prueba.name,
     //   img: prueba.img,
       
@@ -264,7 +254,7 @@ document.getElementById("about").addEventListener("click", function() {
   
 // });
 // })});
-});
+// });
 
 //console.log(hpArray);
 
@@ -279,11 +269,3 @@ function(){
 
 
 
-
-    
-
-    
-
-
-
-  
