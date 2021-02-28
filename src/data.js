@@ -1,4 +1,5 @@
-export const filterChampions = (data, condition) => data.filter(propChamp => propChamp.tags.includes(condition));
+export const filterChampions = (data, condition) => 
+data.filter(propChamp => propChamp.tags.includes(condition));
 
 
 export const orderChampions = (data, sortBy, sortOrder) => {
