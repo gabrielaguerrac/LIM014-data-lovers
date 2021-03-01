@@ -66,7 +66,7 @@ document.getElementById("champions").addEventListener("click", function() {
                 
             </section>
          </section>`
-        } )
+        })
        // console.log(htmlString);
         storage.innerHTML = htmlString;  
       }
@@ -154,7 +154,8 @@ document.getElementById("about").addEventListener("click", function() {
       hp.push(item.stats.hp);
 
       //console.log(hp);
-      return `<table> 
+      return `<section id='sec'>
+      <table> 
       <tr>
           <th>${item.name}</th>
           <th>${item.img}</th>  
@@ -165,9 +166,9 @@ document.getElementById("about").addEventListener("click", function() {
           <td>${item.title}</td>
          
       </tr>
-  </table>`;
+  </table> </section>`
     });
-  document.getElementsByClassName("aboutLol").innerHTML = tabla;
+  document.getElementById("aboutLol").innerHTML = tabla;
 
     let minMax = (computeStats(hp));
     console.log(minMax);
