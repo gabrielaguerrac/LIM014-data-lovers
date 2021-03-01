@@ -148,8 +148,8 @@ document.getElementById("statistics").addEventListener("click", function() {
    let hpResult= computeStats(hp);
    let armorResult= computeStats(armor);
 
-   console.log(hpResult);
-   console.log(armorResult);
+   //console.log(hpResult);
+   //console.log(armorResult);
 
 
 
@@ -161,27 +161,45 @@ document.getElementById("statistics").addEventListener("click", function() {
    // hp.push(propChamp.stats.hp);
    // let hpResult= computeStats(newData, "hp");
     // console.log(hp);
-   
-   if(propChamp.stats.hp == hpResult[0] || propChamp.stats.hp == hpResult[1]) {
-   return `<table class="sect"> 
+
+   function create (stat, title){
+    return `<table class="sect"> 
+    <th> ${title} </th>
     <tr>${propChamp.name}</tr>
     <tr><img src="${propChamp.img}"></img></tr> 
-    <th>HP: </th>
-    <td>${propChamp.stats.hp}</td>
+    <td>${stat}</td>
    </table>`
    }
 
-   else if  (propChamp.stats.armor == armorResult[0] || propChamp.stats.armor == armorResult[1]) {
-    return `
+ /*   switch(propChamp.stats.hp){
+     case hpResult[0] : create(propChamp.stats.hp , "hp");
+     break;
+     default: console.log("wiwi");
+   }; */
 
-    <table class="sect"> 
+   
+   if(propChamp.stats.hp == hpResult[0] || propChamp.stats.hp == hpResult[1]) {
+   /* return `<table class="sect"> 
+    <th>HP: </th>
     <tr>${propChamp.name}</tr>
     <tr><img src="${propChamp.img}"></img></tr> 
-    <th> ARMOR: </th>
-    <td> armor: ${propChamp.stats.armor}</td>
-    </table>
-    `
+    <td>${propChamp.stats.hp}</td>
+   </table>` */
+
+  return create (propChamp.stats.hp, "hp")
    }
+
+  //  else if  (propChamp.stats.armor == armorResult[0] || propChamp.stats.armor == armorResult[1]) {
+  //   return `
+
+  //   <table class="sect"> 
+  //   <tr>${propChamp.name}</tr>
+  //   <tr><img src="${propChamp.img}"></img></tr> 
+  //   <th> ARMOR: </th>
+  //   <td> armor: ${propChamp.stats.armor}</td>
+  //   </table>
+  //   `
+  
   //  return hp.push(propChamp.stats.hp)
    });
    //console.log(hp);
