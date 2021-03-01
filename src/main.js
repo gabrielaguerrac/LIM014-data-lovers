@@ -8,10 +8,11 @@ document.getElementById("secondNavigator").style.display= "none";
 document.getElementById("storage").style.display="none";
 document.getElementById("modalContainer").style.display = "none";
 document.querySelector(".aboutLol").style.display = "none";
+document.getElementById("minMax").style.display="none";
 
 const storage = document.getElementById("storage");
 const searchBar = document.getElementById("searchBar");
-const entries = Object.entries(data.data);
+//const entries = Object.entries(data.data);
 const newData = Object.values(data.data);//{version:...}
 
 
@@ -23,10 +24,11 @@ document.getElementById("champions").addEventListener("click", function() {
     document.getElementById("body").classList.remove("page3-Statistics");
     document.getElementById("body").classList.remove("page4-InfoAbout");
     document.getElementById("storage").style.display="block";
-    
+    document.getElementById("minMax").style.display="none";
+
     const showChampions = (champions) => {
         let htmlString = champions.map((propChamp)  => {
-          console.log(propChamp);
+          //console.log(propChamp);
             
             let tags = Object.values(propChamp.tags);
             let infoKeys = Object.keys(propChamp.info);
@@ -102,7 +104,7 @@ document.getElementById("champions").addEventListener("click", function() {
             document.getElementById("order").addEventListener("change", (e) => {
                 let target = e.target.value;
                 let orderedChamps = (orderChampions(filterRoles,"name", target));
-                console.log(orderedChamps)
+                //console.log(orderedChamps)
                 showChampions(orderedChamps);
             });
         }
@@ -113,7 +115,7 @@ document.getElementById("champions").addEventListener("click", function() {
         
         let target = e.target.value;
         let orderedChamps = (orderChampions(newData, "name", target));
-        //console.log(orderedChamps)
+        console.log(orderedChamps)
         showChampions(orderedChamps);
     });   
  
@@ -128,67 +130,108 @@ document.getElementById("statistics").addEventListener("click", function() {
     document.getElementById("body").classList.remove("page2-Champions");
     document.getElementById("body").classList.remove("page4-InfoAbout");
     document.getElementById("storage").style.display= "none";
+    document.getElementById("minMax").style.display="block";
    //const dataAllChampions = Object.values(data);
    
-});
 
-
-//VISTA 4
-document.getElementById("about").addEventListener("click", function() {
-    document.getElementById("secondNavigator").style.display= "none";
-    document.getElementById("leagueOfLegends").style.display= "none";
-    document.getElementById("body").classList.add("page4-InfoAbout");
-    document.getElementById("body").classList.remove("page3-Statistics");
-    document.getElementById("body").classList.remove("page2-Champions");
-    document.getElementById("storage").style.display= "none";
-    document.querySelector(".aboutLol").style.display= "block";
 
     //console.log(newData);
   //FUNCIONA
   
-  let hp = [];
-   let tabla = newData.forEach((item) => {
-      //console.log(item.stats.hp
+   let hp = [];
+   let armor = [];
+   newData.forEach(item=>{
+    hp.push(item.stats.hp);
+    armor.push(item.stats.armor);
+
+   });
+   let hpResult= computeStats(hp);
+   let armorResult= computeStats(armor);
+
+   //console.log(hpResult);
+   //console.log(armorResult);
 
 
-      hp.push(item.stats.hp);
 
-      //console.log(hp);
-      return `<section id='sec'>
-      <table> 
-      <tr>
-          <th>${item.name}</th>
-          <th>${item.img}</th>  
-      </tr>
 
-      <tr>
+   let table = newData.map((propChamp) => {
+
+      //console.log(item.stats.hp)
+   // console.log(item.name)
+   // hp.push(propChamp.stats.hp);
+   // let hpResult= computeStats(newData, "hp");
+    // console.log(hp);
+
+   function create (stat, title){
+    return `<table class="sect"> 
+    <th> ${title} </th>
+    <tr>${propChamp.name}</tr>
+    <tr><img src="${propChamp.img}"></img></tr> 
+    <td>${stat}</td>
+   </table>`
+   }
+
+ /*   switch(propChamp.stats.hp){
+     case hpResult[0] : create(propChamp.stats.hp , "hp");
+     break;
+     default: console.log("wiwi");
+   }; */
+
+   
+   if(propChamp.stats.hp == hpResult[0] || propChamp.stats.hp == hpResult[1]) {
+   /* return `<table class="sect"> 
+    <th>HP: </th>
+    <tr>${propChamp.name}</tr>
+    <tr><img src="${propChamp.img}"></img></tr> 
+    <td>${propChamp.stats.hp}</td>
+   </table>` */
+
+  return create (propChamp.stats.hp, "hp")
+   }
+
+  //  else if  (propChamp.stats.armor == armorResult[0] || propChamp.stats.armor == armorResult[1]) {
+  //   return `
+
+  //   <table class="sect"> 
+  //   <tr>${propChamp.name}</tr>
+  //   <tr><img src="${propChamp.img}"></img></tr> 
+  //   <th> ARMOR: </th>
+  //   <td> armor: ${propChamp.stats.armor}</td>
+  //   </table>
+  //   `
+  
+  //  return hp.push(propChamp.stats.hp)
+   });
+   //console.log(hp);
+   document.getElementById("minMax").innerHTML = table;
+});
+
+
+
+
+    
+   //console.log(hp)
+
+    // let pintar = computeStats(hp){
+    
+    //   return pintar};
+      /* `<table id="sect"> 
+    
+          <tr>${item.name}</tr>
+          <tr><img src="${item.img}"></img></tr> 
+    
+      
           <td>${item.stats.hp}</td>
-          <td>${item.title}</td>
+        
          
-      </tr>
-  </table> </section>`
-    });
-  document.getElementById("aboutLol").innerHTML = tabla;
+  </table>` */
+  
+    // }) ;
+   /*  console.log(computeStats(hp));
+    document.getElementById("aboutLol").innerHTML = table;
 
     let minMax = (computeStats(hp));
-    console.log(minMax);
-
-
-
-    
-
-    
-  
-
-
-    
-
-
-
-
-
-
-
+    //console.log(minMax); */
 
 
 
@@ -205,9 +248,9 @@ document.getElementById("about").addEventListener("click", function() {
   
   
   
-  //  
+  //   let hpArray = newData.map((prueba)=>{
     //console.log(prueba);
-    // let objetoData ={ //PARA CONSTRUIR TABLA CON STRING TEMPLATES
+    // let objetoData ={ //PARA CONSTRUIR TABLA CON STRING TEMPLATES - CODIGO BETSY
     //   name : prueba.name,
     //   img: prueba.img,
       
@@ -265,26 +308,28 @@ document.getElementById("about").addEventListener("click", function() {
   
 // });
 // })});
-});
+// });
 
 //console.log(hpArray);
 
+//VISTA 4
+document.getElementById("about").addEventListener("click", function() {
+  document.getElementById("secondNavigator").style.display= "none";
+  document.getElementById("leagueOfLegends").style.display= "none";
+  document.getElementById("body").classList.add("page4-InfoAbout");
+  document.getElementById("body").classList.remove("page3-Statistics");
+  document.getElementById("body").classList.remove("page2-Champions");
+  document.getElementById("storage").style.display= "none";
+  document.querySelector(".aboutLol").style.display= "block";
+  document.getElementById("minMax").style.display="none";
+});
 
 //RELOAD
 document.getElementById("lolIcon").addEventListener("click",
 function(){
     location.reload();
-}
-);
+});
 
 
 
 
-
-    
-
-    
-
-
-
-  
