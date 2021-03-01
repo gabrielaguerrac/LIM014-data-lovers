@@ -8,6 +8,7 @@ document.getElementById("secondNavigator").style.display= "none";
 document.getElementById("storage").style.display="none";
 document.getElementById("modalContainer").style.display = "none";
 document.querySelector(".aboutLol").style.display = "none";
+document.getElementById("minMax").style.display="none";
 
 const storage = document.getElementById("storage");
 const searchBar = document.getElementById("searchBar");
@@ -23,7 +24,8 @@ document.getElementById("champions").addEventListener("click", function() {
     document.getElementById("body").classList.remove("page3-Statistics");
     document.getElementById("body").classList.remove("page4-InfoAbout");
     document.getElementById("storage").style.display="block";
-    
+    document.getElementById("minMax").style.display="none";
+
     const showChampions = (champions) => {
         let htmlString = champions.map((propChamp)  => {
           //console.log(propChamp);
@@ -128,32 +130,66 @@ document.getElementById("statistics").addEventListener("click", function() {
     document.getElementById("body").classList.remove("page2-Champions");
     document.getElementById("body").classList.remove("page4-InfoAbout");
     document.getElementById("storage").style.display= "none";
+    document.getElementById("minMax").style.display="block";
    //const dataAllChampions = Object.values(data);
    
-});
 
-
-//VISTA 4
-document.getElementById("about").addEventListener("click", function() {
-    document.getElementById("secondNavigator").style.display= "none";
-    document.getElementById("leagueOfLegends").style.display= "none";
-    document.getElementById("body").classList.add("page4-InfoAbout");
-    document.getElementById("body").classList.remove("page3-Statistics");
-    document.getElementById("body").classList.remove("page2-Champions");
-    document.getElementById("storage").style.display= "none";
-    document.querySelector(".aboutLol").style.display= "block";
 
     //console.log(newData);
   //FUNCIONA
   
- let hp = [];
+   let hp = [];
+   let armor = [];
+   newData.forEach(item=>{
+    hp.push(item.stats.hp);
+    armor.push(item.stats.armor);
+
+   });
+   let hpResult= computeStats(hp);
+   let armorResult= computeStats(armor);
+
+   console.log(hpResult);
+   console.log(armorResult);
+
+
+
+
    let table = newData.map((propChamp) => {
 
       //console.log(item.stats.hp)
    // console.log(item.name)
-   return hp.push(propChamp.stats.hp)
+   // hp.push(propChamp.stats.hp);
+   // let hpResult= computeStats(newData, "hp");
+    // console.log(hp);
+   
+   if(propChamp.stats.hp == hpResult[0] || propChamp.stats.hp == hpResult[1]) {
+   return `<table class="sect"> 
+    <tr>${propChamp.name}</tr>
+    <tr><img src="${propChamp.img}"></img></tr> 
+    <th>HP: </th>
+    <td>${propChamp.stats.hp}</td>
+   </table>`
+   }
+
+   else if  (propChamp.stats.armor == armorResult[0] || propChamp.stats.armor == armorResult[1]) {
+    return `
+
+    <table class="sect"> 
+    <tr>${propChamp.name}</tr>
+    <tr><img src="${propChamp.img}"></img></tr> 
+    <th> ARMOR: </th>
+    <td> armor: ${propChamp.stats.armor}</td>
+    </table>
+    `
+   }
+  //  return hp.push(propChamp.stats.hp)
    });
+   //console.log(hp);
+   document.getElementById("minMax").innerHTML = table;
 });
+
+
+
 
     
    //console.log(hp)
@@ -258,13 +294,23 @@ document.getElementById("about").addEventListener("click", function() {
 
 //console.log(hpArray);
 
+//VISTA 4
+document.getElementById("about").addEventListener("click", function() {
+  document.getElementById("secondNavigator").style.display= "none";
+  document.getElementById("leagueOfLegends").style.display= "none";
+  document.getElementById("body").classList.add("page4-InfoAbout");
+  document.getElementById("body").classList.remove("page3-Statistics");
+  document.getElementById("body").classList.remove("page2-Champions");
+  document.getElementById("storage").style.display= "none";
+  document.querySelector(".aboutLol").style.display= "block";
+  document.getElementById("minMax").style.display="none";
+});
 
 //RELOAD
 document.getElementById("lolIcon").addEventListener("click",
 function(){
     location.reload();
-}
-);
+});
 
 
 
