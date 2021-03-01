@@ -8,6 +8,7 @@ document.getElementById("secondNavigator").style.display= "none";
 document.getElementById("storage").style.display="none";
 document.getElementById("modalContainer").style.display = "none";
 document.querySelector(".aboutLol").style.display = "none";
+document.getElementById("minMax").style.display="none";
 
 const storage = document.getElementById("storage");
 const searchBar = document.getElementById("searchBar");
@@ -23,7 +24,8 @@ document.getElementById("champions").addEventListener("click", function() {
     document.getElementById("body").classList.remove("page3-Statistics");
     document.getElementById("body").classList.remove("page4-InfoAbout");
     document.getElementById("storage").style.display="block";
-    
+    document.getElementById("minMax").style.display="none";
+
     const showChampions = (champions) => {
         let htmlString = champions.map((propChamp)  => {
           //console.log(propChamp);
@@ -128,32 +130,99 @@ document.getElementById("statistics").addEventListener("click", function() {
     document.getElementById("body").classList.remove("page2-Champions");
     document.getElementById("body").classList.remove("page4-InfoAbout");
     document.getElementById("storage").style.display= "none";
+    document.getElementById("minMax").style.display="block";
    //const dataAllChampions = Object.values(data);
    
-});
 
-
-//VISTA 4
-document.getElementById("about").addEventListener("click", function() {
-    document.getElementById("secondNavigator").style.display= "none";
-    document.getElementById("leagueOfLegends").style.display= "none";
-    document.getElementById("body").classList.add("page4-InfoAbout");
-    document.getElementById("body").classList.remove("page3-Statistics");
-    document.getElementById("body").classList.remove("page2-Champions");
-    document.getElementById("storage").style.display= "none";
-    document.querySelector(".aboutLol").style.display= "block";
 
     //console.log(newData);
   //FUNCIONA
   
- let hp = [];
-   let table = newData.map((propChamp) => {
+   let hp = [];
+   let armor = [];
+   let attackdamage = [];
+   let movespeed = [];
+  //  let attackrange = [];
 
-      //console.log(item.stats.hp)
-   // console.log(item.name)
-   return hp.push(propChamp.stats.hp)
+   newData.forEach(item=>{
+    hp.push(item.stats.hp);
+    armor.push(item.stats.armor);
+    attackdamage.push(item.stats.attackdamage);
+    movespeed.push(item.stats.movespeed);
+    // attackrange.push(item.stats.attackrange);
+
    });
+   let hpResult= computeStats(hp);
+   let armorResult= computeStats(armor);
+   let attackdamageResult= computeStats(attackdamage);
+   let movespeedResult= computeStats(movespeed);
+  //  let attackrangeResult= computeStats(attackrange);
+
+   //console.log(hpResult);
+   //console.log(armorResult);
+
+   function create (stat, title, propChamp, /* valueMinMax */){
+    return `<section><table class="sect">
+    <tr> 
+    <caption> ${title.toUpperCase()} </caption>
+    <th>${valueMinMax}</th> 
+    
+    
+    </tr>
+
+    <tr>
+    <td><img src=${propChamp.img}></img></td> 
+    <th>${propChamp.name}</th>
+    <th>${stat}</th>
+    
+    </tr>
+    
+   </table>
+   </section>`
+   }
+
+   let table = newData.map((propChamp) => {
+   
+
+  switch(propChamp.stats.hp){
+    case hpResult[0]:
+        create (propChamp.stats.hp, "hp", propChamp);
+        console.log("entré");
+      break;
+
+      case hpResult[1]:
+        create (propChamp.stats.hp, "hp", propChamp);
+        console.log("ingresé");
+      break;  
+     default:
+       console.log("no funcionó");
+      
+
+  }
+
+ /*   if(propChamp.stats.hp == hpResult[0] || propChamp.stats.hp == hpResult[1]) {
+     return create (propChamp.stats.hp, "hp", propChamp)
+   }
+
+  else if  (propChamp.stats.armor == armorResult[0] || propChamp.stats.armor == armorResult[1]) {
+    return create (propChamp.stats.armor, "armor" , propChamp)}
+  
+  else if  (propChamp.stats.attackdamage == attackdamageResult[0] || propChamp.stats.attackdamage == attackdamageResult[1]) {
+      return create (propChamp.stats.attackdamage, "attackdamage" , propChamp)}
+      
+  else if  (propChamp.stats.movespeed == movespeedResult[0] || propChamp.stats.movespeed == movespeedResult[1]) {
+        return create (propChamp.stats.movespeed, "movespeed" , propChamp)} */
+
+/*   else if (propChamp.stats.attackrange == attackrangeResult[0] || propChamp.stats.attackrange == attackrangeResult[1]) {
+          return create (propChamp.stats.attackrange, "attackrange" , propChamp)} */
+
+  
 });
+   //console.log(hp);
+   document.getElementById("minMax").innerHTML = table.join("");
+});
+
+
 
     
    //console.log(hp)
@@ -258,14 +327,22 @@ document.getElementById("about").addEventListener("click", function() {
 
 //console.log(hpArray);
 
+//VISTA 4
+document.getElementById("about").addEventListener("click", function() {
+  document.getElementById("secondNavigator").style.display= "none";
+  document.getElementById("leagueOfLegends").style.display= "none";
+  document.getElementById("body").classList.add("page4-InfoAbout");
+  document.getElementById("body").classList.remove("page3-Statistics");
+  document.getElementById("body").classList.remove("page2-Champions");
+  document.getElementById("storage").style.display= "none";
+  document.querySelector(".aboutLol").style.display= "block";
+  document.getElementById("minMax").style.display="none";
+});
 
 //RELOAD
 document.getElementById("lolIcon").addEventListener("click",
 function(){
     location.reload();
-}
-);
-
-
+});
 
 
