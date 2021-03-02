@@ -262,18 +262,76 @@ document.getElementById("statistics").addEventListener("click", function() {
     </tr>
 
     <tr>
-      <th>${attackMin.name}</th>
+      <td>${attackMin.name}</td>
+      <td>${attackMax.name}</td>
+    </tr>
+    
+    <tr>
       <td><img src=${attackMin.img}></img></td> 
-      <td>${attackMin.value}</td>
+      <td><img src=${attackMax.img}></img></td> 
     </tr>
 
     <tr>
-      <th>${attackMax.name}</th>
-      <td><img src=${attackMax.img}></img></td> 
+      <td>${attackMin.value}</td>
       <td>${attackMax.value}</td>
     </tr>
 
+   </table>
+   <br>
+   <table class="table">
+    <tr> 
+    <caption> ARMOR </caption>
+    </tr>
+
+    <tr>
+      <th>MINIMO</th>
+      <th>MAXIMO</th>
+    </tr>
+
+    <tr>
+      <td>${armorMin.name}</td>
+      <td>${armorMax.name}</td>
+    </tr>
+    
+    <tr>
+      <td><img src=${armorMin.img}></img></td> 
+      <td><img src=${armorMax.img}></img></td> 
+    </tr>
+
+    <tr>
+      <td>${armorMin.value}</td>
+      <td>${armorMax.value}</td>
+    </tr>
+
+   </table>
+   <br>
+   <table class="table">
+    <tr> 
+    <caption> HP </caption>
+    </tr>
+
+    <tr>
+      <th>MINIMO</th>
+      <th>MAXIMO</th>
+    </tr>
+
+    <tr>
+      <td>${hpMin.name}</td>
+      <td>${hpMax.name}</td>
+    </tr>
+    
+    <tr>
+      <td><img src=${hpMin.img}></img></td> 
+      <td><img src=${hpMax.img}></img></td> 
+    </tr>
+
+    <tr>
+      <td>${hpMin.value}</td>
+      <td>${hpMax.value}</td>
+    </tr>
+
    </table>`
+
 
 
    document.getElementById("minMax").innerHTML = newTable;
