@@ -490,12 +490,19 @@ aside> h2{
 
 .table >  tr, th ,  td {
     border: solid 3px rgba(161, 97, 35, 1);
-    padding: 20px;
+    text-align: center;
+    padding: 15px;
     height: 2%;
     width: 15%;
     color: white;
     margin: 3%;
+    font-size: 18px;
     
+    
+}
+
+.table td > img{
+    width:70px;
     
 }
 
@@ -504,6 +511,7 @@ caption {
     padding: 1%;
     color: white;
     border-bottom: solid 5px rgba(161, 97, 35, 1);
+    font-size:22px;
 }
 
 
