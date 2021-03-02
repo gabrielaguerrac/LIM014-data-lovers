@@ -7,7 +7,7 @@ document.getElementById("firstNavigator").style.display= "block";
 document.getElementById("secondNavigator").style.display= "none";
 document.getElementById("storage").style.display="none";
 document.getElementById("modalContainer").style.display = "none";
-document.querySelector(".aboutLol").style.display = "none";
+document.getElementById("aboutLol").style.display = "none";
 document.getElementById("minMax").style.display="none";
 
 const storage = document.getElementById("storage");
@@ -80,10 +80,10 @@ document.getElementById("champions").addEventListener("click", function() {
     searchBar.addEventListener("keyup", (e) =>{
         const searchValue = e.target.value.toLowerCase();
         
-        let filteredChampions = newData.filter(propChamp => {
+        let filteredChampions = newData.filter(element => {
           
           //console.log(propChamp);
-         return propChamp.name.toLowerCase().includes(searchValue);
+         return element.name.toLowerCase().includes(searchValue);
         })
         showChampions(filteredChampions);
         //console.log(filteredChampions);
@@ -130,6 +130,7 @@ document.getElementById("statistics").addEventListener("click", function() {
     document.getElementById("body").classList.remove("page2-Champions");
     document.getElementById("body").classList.remove("page4-InfoAbout");
     document.getElementById("storage").style.display= "none";
+    document.getElementById("aboutLol").style.display="none";
     document.getElementById("minMax").style.display="block";
     document.querySelector(".aboutLol").style.display = "none";
 
@@ -155,7 +156,6 @@ document.getElementById("statistics").addEventListener("click", function() {
    let armorResult= computeStats(armor);
    let attackdamageResult= computeStats(attackdamage);
 
-
    //console.log(hpResult);
    //console.log(armorResult);
 
@@ -175,8 +175,14 @@ document.getElementById("statistics").addEventListener("click", function() {
    </table>`
    }
 
-   let table = newData.map((propChamp) => {
-   
+  let hpMin;
+  let hpMax;
+  let armorMin;
+  let armorMax;
+  let attackMin;
+  let attackMax;
+  newData.forEach((propChamp) => {
+  
 
 /*   switch(propChamp.stats.hp){
     case hpResult[0]:
@@ -193,27 +199,45 @@ document.getElementById("statistics").addEventListener("click", function() {
       
   } */
 
-   if(propChamp.stats.hp == hpResult[0] || propChamp.stats.hp == hpResult[1]) {
-     return { 
+   if(propChamp.stats.hp == hpResult[0]) {
+     hpMin = { 
       name : propChamp.name,
       img: propChamp.img,
-      typeValue: "hp",
       value: propChamp.stats.hp
       }
    }
-   else if(propChamp.stats.armor == armorResult[0] || propChamp.stats.armor == armorResult[1]) {
-    return { 
+   else if(propChamp.stats.hp == hpResult[1]) {
+     hpMax = { 
+      name : propChamp.name,
+      img: propChamp.img,
+      value: propChamp.stats.hp
+      }
+  }
+   else if(propChamp.stats.armor == armorResult[0]) {
+    armorMin = { 
      name : propChamp.name,
      img: propChamp.img,
-     typeValue: "armor",
      value: propChamp.stats.armor
      }
   }
-  else if(propChamp.stats.attackdamage == attackdamageResult[0] || propChamp.stats.attackdamage == attackdamageResult[1]) {
-    return { 
+  else if(propChamp.stats.armor == armorResult[1]) {
+    armorMax = { 
      name : propChamp.name,
      img: propChamp.img,
-     typeValue: "attackdamage",
+     value: propChamp.stats.armor
+     }
+  }
+  else if(propChamp.stats.attackdamage == attackdamageResult[0]) {
+    attackMin = { 
+     name : propChamp.name,
+     img: propChamp.img,
+     value: propChamp.stats.attackdamage
+     }
+  }
+  else if(propChamp.stats.attackdamage == attackdamageResult[1]) {
+    attackMax = { 
+     name : propChamp.name,
+     img: propChamp.img,
      value: propChamp.stats.attackdamage
      }
   }
@@ -225,8 +249,92 @@ document.getElementById("statistics").addEventListener("click", function() {
   //     return create (propChamp.stats.attackdamage, "attackdamage" , propChamp)}
   
 });
-   console.log(table.join(""));
-   document.getElementById("minMax").innerHTML = table.join("");
+   //console.log(table.join(""));
+    let newTable =  
+   `<table class="table">
+    <tr> 
+    <caption> ATTACKDAMAGE </caption>
+    </tr>
+
+    <tr>
+      <th>MINIMO</th>
+      <th>MAXIMO</th>
+    </tr>
+
+    <tr>
+      <td>${attackMin.name}</td>
+      <td>${attackMax.name}</td>
+    </tr>
+    
+    <tr>
+      <td><img src=${attackMin.img}></img></td> 
+      <td><img src=${attackMax.img}></img></td> 
+    </tr>
+
+    <tr>
+      <td>${attackMin.value}</td>
+      <td>${attackMax.value}</td>
+    </tr>
+
+   </table>
+   <br>
+   <table class="table">
+    <tr> 
+    <caption> ARMOR </caption>
+    </tr>
+
+    <tr>
+      <th>MINIMO</th>
+      <th>MAXIMO</th>
+    </tr>
+
+    <tr>
+      <td>${armorMin.name}</td>
+      <td>${armorMax.name}</td>
+    </tr>
+    
+    <tr>
+      <td><img src=${armorMin.img}></img></td> 
+      <td><img src=${armorMax.img}></img></td> 
+    </tr>
+
+    <tr>
+      <td>${armorMin.value}</td>
+      <td>${armorMax.value}</td>
+    </tr>
+
+   </table>
+   <br>
+   <table class="table">
+    <tr> 
+    <caption> HP </caption>
+    </tr>
+
+    <tr>
+      <th>MINIMO</th>
+      <th>MAXIMO</th>
+    </tr>
+
+    <tr>
+      <td>${hpMin.name}</td>
+      <td>${hpMax.name}</td>
+    </tr>
+    
+    <tr>
+      <td><img src=${hpMin.img}></img></td> 
+      <td><img src=${hpMax.img}></img></td> 
+    </tr>
+
+    <tr>
+      <td>${hpMin.value}</td>
+      <td>${hpMax.value}</td>
+    </tr>
+
+   </table>`
+
+
+
+   document.getElementById("minMax").innerHTML = newTable;
 });
 
 
