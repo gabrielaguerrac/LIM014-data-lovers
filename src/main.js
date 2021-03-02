@@ -7,7 +7,7 @@ document.getElementById("firstNavigator").style.display= "block";
 document.getElementById("secondNavigator").style.display= "none";
 document.getElementById("storage").style.display="none";
 document.getElementById("modalContainer").style.display = "none";
-document.querySelector(".aboutLol").style.display = "none";
+document.getElementById("aboutLol").style.display = "none";
 document.getElementById("minMax").style.display="none";
 
 const storage = document.getElementById("storage");
@@ -130,6 +130,7 @@ document.getElementById("statistics").addEventListener("click", function() {
     document.getElementById("body").classList.remove("page2-Champions");
     document.getElementById("body").classList.remove("page4-InfoAbout");
     document.getElementById("storage").style.display= "none";
+    document.getElementById("aboutLol").style.display="none";
     document.getElementById("minMax").style.display="block";
    //const dataAllChampions = Object.values(data);
    
@@ -148,14 +149,14 @@ document.getElementById("statistics").addEventListener("click", function() {
     hp.push(item.stats.hp);
     armor.push(item.stats.armor);
     attackdamage.push(item.stats.attackdamage);
-    movespeed.push(item.stats.movespeed);
+    //movespeed.push(item.stats.movespeed);
     // attackrange.push(item.stats.attackrange);
 
    });
    let hpResult= computeStats(hp);
    let armorResult= computeStats(armor);
    let attackdamageResult= computeStats(attackdamage);
-   let movespeedResult= computeStats(movespeed);
+  // let movespeedResult= computeStats(movespeed);
   //  let attackrangeResult= computeStats(attackrange);
 
    //console.log(hpResult);
@@ -165,8 +166,6 @@ document.getElementById("statistics").addEventListener("click", function() {
     return `<section><table class="sect">
     <tr> 
     <caption> ${title.toUpperCase()} </caption>
-    <th>${valueMinMax}</th> 
-    
     
     </tr>
 
@@ -184,23 +183,23 @@ document.getElementById("statistics").addEventListener("click", function() {
    let table = newData.map((propChamp) => {
    
 
-  switch(propChamp.stats.hp){
-    case hpResult[0]:
-        create (propChamp.stats.hp, "hp", propChamp);
-        console.log("entré");
-      break;
+  // switch(propChamp.stats.hp){
+  //   case hpResult[0]:
+  //       create (propChamp.stats.hp, "hp", propChamp);
+  //       console.log("entré");
+  //     break;
 
-      case hpResult[1]:
-        create (propChamp.stats.hp, "hp", propChamp);
-        console.log("ingresé");
-      break;  
-     default:
-       console.log("no funcionó");
+  //     case hpResult[1]:
+  //       create (propChamp.stats.hp, "hp", propChamp);
+  //       console.log("ingresé");
+  //     break;  
+  //    default:
+  //      console.log("no funcionó");
       
 
-  }
+  // }
 
- /*   if(propChamp.stats.hp == hpResult[0] || propChamp.stats.hp == hpResult[1]) {
+ if(propChamp.stats.hp == hpResult[0] || propChamp.stats.hp == hpResult[1]) {
      return create (propChamp.stats.hp, "hp", propChamp)
    }
 
@@ -210,11 +209,11 @@ document.getElementById("statistics").addEventListener("click", function() {
   else if  (propChamp.stats.attackdamage == attackdamageResult[0] || propChamp.stats.attackdamage == attackdamageResult[1]) {
       return create (propChamp.stats.attackdamage, "attackdamage" , propChamp)}
       
-  else if  (propChamp.stats.movespeed == movespeedResult[0] || propChamp.stats.movespeed == movespeedResult[1]) {
-        return create (propChamp.stats.movespeed, "movespeed" , propChamp)} */
+  //else if  (propChamp.stats.movespeed == movespeedResult[0] || propChamp.stats.movespeed == movespeedResult[1]) {
+        //return create (propChamp.stats.movespeed, "movespeed" , propChamp)} 
 
-/*   else if (propChamp.stats.attackrange == attackrangeResult[0] || propChamp.stats.attackrange == attackrangeResult[1]) {
-          return create (propChamp.stats.attackrange, "attackrange" , propChamp)} */
+  // else if (propChamp.stats.attackrange == attackrangeResult[0] || propChamp.stats.attackrange == attackrangeResult[1]) {
+  //         return create (propChamp.stats.attackrange, "attackrange" , propChamp)} 
 
   
 });
