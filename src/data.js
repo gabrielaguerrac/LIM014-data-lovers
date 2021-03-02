@@ -2,6 +2,8 @@ export const filterChampions = (data, condition) =>
 data.filter(propChamp => propChamp.tags.includes(condition));
 
 
+
+
 export const orderChampions = (data, sortBy, sortOrder) => {
   console.log(data)
   if ( sortOrder == "aZ"){
@@ -43,7 +45,7 @@ export const orderChampions = (data, sortBy, sortOrder) => {
   
 }
 
-export const computeStats =  function minMax(data/* ,stats */) {
+export const computeStats =  (data/* ,stats */) => {
     // console.log(data);
 
 //PARA SACAR MIN Y MAX 1 SOLO VALOR NO TOP 3

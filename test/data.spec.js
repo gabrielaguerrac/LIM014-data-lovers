@@ -1,24 +1,46 @@
-import { example, anotherExample } from '../src/data.js';
+import { filterChampions, orderChampions, computeStats } from '../src/data.js';
 
 
-describe('example', () => {
+describe('Filtrado de Campeones', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filterChampions).toBe('function');
   });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
+  it('deberia retornar un objeto', () => {
+    expect(typeof filterChampions(object, string)).toBe('object');//duda
+  });
+
+  // it('deberia retornar true ', () => {
+  //   expect(filterChampions({name: 'abc', edad:10, tags: 'mage'}, 'mage')).toBe(true);
+  // });//duda: 
+
+  it('should throw TypeError when invoked with wrong argument types', () => {
+    expect(() => filterChampions()).toThrow(TypeError);
+    expect(() => filterChampions(0)).toThrow(TypeError);
+    expect(() => filterChampions(null, [])).toThrow(TypeError);
+    expect(() => filterChampions(0, 0)).toThrow(TypeError);
   });
 });
 
 
-describe('anotherExample', () => {
+describe('Ordenar Campeones', () => {
   it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
+    expect(typeof orderChampions).toBe('function');
   });
 
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
+  // it('returns `anotherExample`', () => {
+  //   expect(anotherExample()).toBe('OMG');
+  // });
+});
+
+
+describe('Valores min y max por stats' , () => {
+  it('is a function', () => {
+    expect(typeof computeStats).toBe('function');
   });
+
+  // it('returns `anotherExample`', () => {
+  //   expect(anotherExample()).toBe('OMG');
+  // });
 });
  
