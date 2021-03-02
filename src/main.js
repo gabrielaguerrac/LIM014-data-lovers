@@ -175,8 +175,14 @@ document.getElementById("statistics").addEventListener("click", function() {
    </table>`
    }
 
-   let table = newData.map((propChamp) => {
-   
+  let hpMin;
+  let hpMax;
+  let armorMin;
+  let armorMax;
+  let attackMin;
+  let attackMax;
+  newData.forEach((propChamp) => {
+  
 
 /*   switch(propChamp.stats.hp){
     case hpResult[0]:
@@ -193,27 +199,45 @@ document.getElementById("statistics").addEventListener("click", function() {
       
   } */
 
-   if(propChamp.stats.hp == hpResult[0] || propChamp.stats.hp == hpResult[1]) {
-     return { 
+   if(propChamp.stats.hp == hpResult[0]) {
+     hpMin = { 
       name : propChamp.name,
       img: propChamp.img,
-      typeValue: "hp",
       value: propChamp.stats.hp
       }
    }
-   else if(propChamp.stats.armor == armorResult[0] || propChamp.stats.armor == armorResult[1]) {
-    return { 
+   else if(propChamp.stats.hp == hpResult[1]) {
+     hpMax = { 
+      name : propChamp.name,
+      img: propChamp.img,
+      value: propChamp.stats.hp
+      }
+  }
+   else if(propChamp.stats.armor == armorResult[0]) {
+    armorMin = { 
      name : propChamp.name,
      img: propChamp.img,
-     typeValue: "armor",
      value: propChamp.stats.armor
      }
   }
-  else if(propChamp.stats.attackdamage == attackdamageResult[0] || propChamp.stats.attackdamage == attackdamageResult[1]) {
-    return { 
+  else if(propChamp.stats.armor == armorResult[1]) {
+    armorMax = { 
      name : propChamp.name,
      img: propChamp.img,
-     typeValue: "attackdamage",
+     value: propChamp.stats.armor
+     }
+  }
+  else if(propChamp.stats.attackdamage == attackdamageResult[0]) {
+    attackMin = { 
+     name : propChamp.name,
+     img: propChamp.img,
+     value: propChamp.stats.attackdamage
+     }
+  }
+  else if(propChamp.stats.attackdamage == attackdamageResult[1]) {
+    attackMax = { 
+     name : propChamp.name,
+     img: propChamp.img,
      value: propChamp.stats.attackdamage
      }
   }
@@ -225,8 +249,34 @@ document.getElementById("statistics").addEventListener("click", function() {
   //     return create (propChamp.stats.attackdamage, "attackdamage" , propChamp)}
   
 });
-   console.log(table.join(""));
-   document.getElementById("minMax").innerHTML = table.join("");
+   //console.log(table.join(""));
+    let newTable =  
+   `<table class="table">
+    <tr> 
+    <caption> ATTACKDAMAGE </caption>
+    </tr>
+
+    <tr>
+      <th>MINIMO</th>
+      <th>MAXIMO</th>
+    </tr>
+
+    <tr>
+      <th>${attackMin.name}</th>
+      <td><img src=${attackMin.img}></img></td> 
+      <td>${attackMin.value}</td>
+    </tr>
+
+    <tr>
+      <th>${attackMax.name}</th>
+      <td><img src=${attackMax.img}></img></td> 
+      <td>${attackMax.value}</td>
+    </tr>
+
+   </table>`
+
+
+   document.getElementById("minMax").innerHTML = newTable;
 });
 
 
