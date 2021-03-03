@@ -288,10 +288,21 @@ select, input {
     /* width: 10%; */
 }
 
-.searchNoexist {
+.notFoundSearch{
     color :  #FFB800;
+    justify-content: center;
+    display: flex;
+    margin: 12%;
 }
 
+.notFoundSearch > h2 {
+    color: white;
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+.notFoundSearch > i {
+    font-size: 50px;
+}
 
 footer{ 
     display: block;
@@ -614,6 +625,7 @@ caption {
 
     .championsMenu{
         margin-top: 18%;
+       
     }
     .checkBtn {
         color: white;
@@ -671,6 +683,11 @@ caption {
     .lolBtn, #lolIcon{
         width: 48px;
         height: 48px;
+    }
+
+    #searchBar {
+        display: flex;
+        margin-right: 40px;
     }
 
     .downloadGame{

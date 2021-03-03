@@ -73,7 +73,10 @@ function showChampionsPage() {
 
     showChampions(newData);
     
-    let notFound= `<i class="fab fa-searchengin"></i><h2>NO EXISTE</h2>`
+    let notFound= `<section class=notFoundSearch>
+                  <i class="fab fa-searchengin"></i>
+                  <h2>No existe, intenta con otro campeón</h2>
+                  </section>`
 
   //FUNCION BUSCAR POR NOMBRE
   searchBar.addEventListener("keyup", (e) =>{
@@ -219,8 +222,8 @@ else if(propChamp.stats.attackdamage == attackdamageResult[1]) {
   </tr>
 
   <tr>
-    <th>MINIMO</th>
-    <th>MAXIMO</th>
+    <th>MÍNIMO</th>
+    <th>MÁXIMO</th>
   </tr>
 
   <tr>
