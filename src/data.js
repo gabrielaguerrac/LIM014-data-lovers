@@ -1,5 +1,5 @@
 export const filterChampions = (data, condition) => 
-data.filter(propChamp => propChamp.tags.includes(condition));
+data.filter(({tags}) => tags.includes(condition));
 
 // export const filterChampions = (data, key, condition) => 
 // data.filter(propChamp => propChamp[key].includes(condition));
