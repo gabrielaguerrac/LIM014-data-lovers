@@ -216,12 +216,12 @@ else if(propChamp.stats.attackdamage == attackdamageResult[1]) {
 });
  //console.log(table.join(""));
   let newTable =  
- `<table class="table">
+ `<table class="tableMinMax">
   <tr> 
   <caption> ATTACKDAMAGE </caption>
   </tr>
 
-  <tr>
+  <tr class = "headerMinMax">
     <th>MÍNIMO</th>
     <th>MÁXIMO</th>
   </tr>
@@ -243,14 +243,14 @@ else if(propChamp.stats.attackdamage == attackdamageResult[1]) {
 
  </table>
  <br>
- <table class="table">
+ <table class="tableMinMax">
   <tr> 
   <caption> ARMOR </caption>
   </tr>
 
-  <tr>
-    <th>MINIMO</th>
-    <th>MAXIMO</th>
+  <tr class = "headerMinMax">
+    <th>MÍNIMO</th>
+    <th>MÁXIMO</th>
   </tr>
 
   <tr>
@@ -270,14 +270,14 @@ else if(propChamp.stats.attackdamage == attackdamageResult[1]) {
 
  </table>
  <br>
- <table class="table">
+ <table class="tableMinMax">
   <tr> 
   <caption> HP </caption>
   </tr>
 
-  <tr>
-    <th>MINIMO</th>
-    <th>MAXIMO</th>
+  <tr class = "headerMinMax">
+    <th>MÍNIMO</th>
+    <th>MÁXIMO</th>
   </tr>
 
   <tr>
