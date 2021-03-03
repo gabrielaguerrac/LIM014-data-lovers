@@ -2,6 +2,7 @@ import data from './data/lol/lol.js';
 import {orderChampions, filterChampions, computeStats } from './data.js';
 
 
+
 //VISTA INICIO
 document.getElementById("firstNavigator").style.display= "block";
 document.getElementById("secondNavigator").style.display= "none";
@@ -9,6 +10,7 @@ document.getElementById("storage").style.display="none";
 document.getElementById("modalContainer").style.display = "none";
 document.getElementById("aboutLol").style.display = "none";
 document.getElementById("minMax").style.display="none";
+//document.getElementById("downloadGame").addEventListener("click", function() );
 
 const storage = document.getElementById("storage");
 const searchBar = document.getElementById("searchBar");
@@ -17,7 +19,7 @@ const newData = Object.values(data.data);//{version:...}
 
 
 //VISTA CHAMPIONS
-document.getElementById("champions").addEventListener("click", function() {
+    document.getElementById("champions").addEventListener("click", function() {
     document.getElementById("secondNavigator").style.display= "block";
     document.getElementById("leagueOfLegends").style.display= "none";
     document.getElementById("body").classList.add("page2-Champions");
@@ -68,37 +70,46 @@ document.getElementById("champions").addEventListener("click", function() {
                 
             </section>
          </section>`
-        } )
+        })
        // console.log(htmlString);
         storage.innerHTML = htmlString;  
       }
 
       showChampions(newData);
-
+      
+      let notFound= `<i class="fab fa-searchengin"></i><h2>NO EXISTE</h2>`
 
     //FUNCION BUSCAR POR NOMBRE
     searchBar.addEventListener("keyup", (e) =>{
         const searchValue = e.target.value.toLowerCase();
         
-        let filteredChampions = newData.filter(element => {
-          
+         let filteredChampions = newData.filter(element => {
+         
           //console.log(propChamp);
          return element.name.toLowerCase().includes(searchValue);
         })
+        if(filteredChampions == false){
+          return storage.innerHTML = notFound;
+
+        }else{
         showChampions(filteredChampions);
-        //console.log(filteredChampions);
+        }
       });
     
+    
+
 
     //FUNCION FILTRAR POR ROL
     document.getElementById("allRoles").addEventListener("change", (e)=>{
         const roleSelected = e.target.value;
+        //console.log(typeof roleSelected);
 
         if(roleSelected == 'All'){
             return showChampions(newData); //devuelve un objeto
         }else{
             let filterRoles = (filterChampions(newData, roleSelected));
-            //console.log(typeof filterRoles);
+            // console.log(newData.tags); undefined
+           // console.log(filterChampions);
             showChampions(filterRoles);
             
             document.getElementById("order").addEventListener("change", (e) => {
@@ -115,7 +126,7 @@ document.getElementById("champions").addEventListener("click", function() {
         
         let target = e.target.value;
         let orderedChamps = (orderChampions(newData, "name", target));
-        console.log(orderedChamps)
+        //console.log(orderedChamps)
         showChampions(orderedChamps);
     });   
  
@@ -159,22 +170,8 @@ document.getElementById("statistics").addEventListener("click", function() {
    //console.log(hpResult);
    //console.log(armorResult);
 
-   function create (stat, title, propChamp, /* valueMinMax */){
-    return `<table class="table">
-    <tr> 
-    <caption> ${title.toUpperCase()} </caption>
-    </tr>
-
-    <tr>
-    <td><img src=${propChamp.img}></img></td> 
-    <th>${propChamp.name}</th>
-    <th>${stat}</th>
-    
-    </tr>
-    
-   </table>`
-   }
-
+   
+  //Objetos
   let hpMin;
   let hpMax;
   let armorMin;
