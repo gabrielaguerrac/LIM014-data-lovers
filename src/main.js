@@ -2,6 +2,7 @@ import data from './data/lol/lol.js';
 import {orderChampions, filterChampions, computeStats } from './data.js';
 
 
+
 //VISTA INICIO
 document.getElementById("firstNavigator").style.display= "block";
 document.getElementById("secondNavigator").style.display= "none";
@@ -9,6 +10,7 @@ document.getElementById("storage").style.display="none";
 document.getElementById("modalContainer").style.display = "none";
 document.getElementById("aboutLol").style.display = "none";
 document.getElementById("minMax").style.display="none";
+//document.getElementById("downloadGame").addEventListener("click", function() );
 
 const storage = document.getElementById("storage");
 const searchBar = document.getElementById("searchBar");
@@ -17,7 +19,7 @@ const newData = Object.values(data.data);//{version:...}
 
 
 //VISTA CHAMPIONS
-document.getElementById("champions").addEventListener("click", function() {
+    document.getElementById("champions").addEventListener("click", function() {
     document.getElementById("secondNavigator").style.display= "block";
     document.getElementById("leagueOfLegends").style.display= "none";
     document.getElementById("body").classList.add("page2-Champions");
@@ -94,6 +96,8 @@ document.getElementById("champions").addEventListener("click", function() {
         }
       });
     
+    
+
 
     //FUNCION FILTRAR POR ROL
     document.getElementById("allRoles").addEventListener("change", (e)=>{
@@ -104,7 +108,8 @@ document.getElementById("champions").addEventListener("click", function() {
             return showChampions(newData); //devuelve un objeto
         }else{
             let filterRoles = (filterChampions(newData, roleSelected));
-            //console.log(filterRoles);
+            // console.log(newData.tags); undefined
+           // console.log(filterChampions);
             showChampions(filterRoles);
             
             document.getElementById("order").addEventListener("change", (e) => {
