@@ -151,7 +151,7 @@ header{
 
 .menu ul{
     float:left;
-    margin-right: 30%;
+    margin-right: 20%;
     margin-top:7px;
 }
 
@@ -286,6 +286,9 @@ select, input {
     /* width: 10%; */
 }
 
+.searchNoexist {
+    color :  #FFB800;
+}
 
 
 footer{ 
@@ -462,7 +465,7 @@ aside> h2{
 }
 
 #imgMap{
-    width: 45%;
+    width: 40%;
     float:right;
     margin-right:5%;
 }
@@ -470,6 +473,15 @@ aside> h2{
 #lolMap{
     width: 100%;
     margin-right:5%;
+    /* float: left; */
+    margin-right: 5%;
+}
+
+iframe {
+    width: 560px; 
+    height: 315px;
+    margin : 3.5%;
+    margin-top: 5%;
 }
 
 .minMax  {

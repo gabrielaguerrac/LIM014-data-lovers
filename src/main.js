@@ -77,7 +77,7 @@ const newData = Object.values(data.data);//{version:...}
 
       showChampions(newData);
       
-      let notFound= `<i class="fab fa-searchengin"></i><h2>NO EXISTE</h2>`
+      let notFound= `<section class="searchNoexist"><i class="fab fa-searchengin"></i><h2>NO EXISTE</h2></section>`
 
     //FUNCION BUSCAR POR NOMBRE
     searchBar.addEventListener("keyup", (e) =>{
