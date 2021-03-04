@@ -55,7 +55,8 @@
     padding: 20px;
     border-radius: 3px;
     background: black;
-    border: 3px solid rgba(161, 97, 35, 1) ;
+    border: 1px solid rgba(161, 97, 35, 1) ;
+    /* justify-content: center; */
     
     
 }
@@ -74,21 +75,31 @@
     color:rgb(241, 204, 111);
 }
 
-.modalBlurb, .modalTags, .modalInfo, p{
+.modalBlurb,.modalTags, p{
       color: white;
       font-family:'Roboto', sans-serif; 
       font-size: 16px;
 }
 
+
+
 .modalInfo{
-    margin-left: 30%;
-}
-.modalInfo > th, td{
-    border: 1px solid rgb(207, 156, 26);
-    padding: 10px;
-    text-align: center;
+    width: 45%;
+    margin: auto;
+    height: 3%;
+    font-size: 25px;
+    color:rgb(241, 204, 111);
+    /* border: 1px solid rgb(207, 156, 26); */
+    border-collapse: collapse;
+    /* padding: 5px; */
 
 }
+.modalInfo  > th, td{
+    /* border: 1px solid rgb(207, 156, 26); */
+    /* padding: 5px; */
+    text-align: center;
+}
+
 
 
 .close {
@@ -466,7 +477,7 @@ iframe {
 }
 
 
-.table{
+.tableMinMax{
     width: 100%;
     background-color: rgba(0, 2, 19, 0.692);
     text-align: left;
@@ -474,10 +485,10 @@ iframe {
 
 }
 
-.table >  tr, th ,  td {
+.tableMinMax >  tr, th , td {
     border: solid 3px rgba(161, 97, 35, 1);
     text-align: center;
-    padding: 15px;
+    padding: 12px;
     height: 2%;
     width: 15%;
     margin: 3%;
@@ -485,15 +496,15 @@ iframe {
 
 }
 
-.table> tr,td{
+.tableMinMax > tr,td{
     color:white;
 }
 
-.table td > img{
+.tableMinMax td > img{
     width:70px; 
 }
 
-tr > th{
+.headerMinMax{
     color:  rgb(241, 204, 111);
 }
 
@@ -606,6 +617,8 @@ caption {
         font-size: 25px;
         margin: 35%;
     }
+
+   
     
 }
 
@@ -709,4 +722,29 @@ caption {
         font-size: 15px;
         margin: 39%;
     }
+
+    .modalInfo{
+        width: 45%;
+        margin: 2%;
+        height: 5%;
+        padding: 5px;
+        font-size: 12px;
+        margin: auto;
+        
+    
+    }
+    .modalInfo > tr, td, th{
+        /* border: 1px solid rgb(207, 156, 26); */
+        padding: 2px;
+        text-align: center;
+        font-size: 15px;
+        
+        
+    }
+
+    /* .modalInfo > tr > th{
+        padding: 2px;
+        text-align: center;
+        
+    } */
 }
