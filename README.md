@@ -152,6 +152,7 @@ a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
 ### Diseño de la Interfaz de Usuario
 
 #### Prototipo de alta fidelidad general
+Enlace a prototipo en Figma [Figma](https://www.figma.com/file/UZHx1Q3lEVio6PIGTnXYy4/LOL?node-id=0%3A1)
 
 En desktop:
 
