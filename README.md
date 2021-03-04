@@ -152,9 +152,9 @@ a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
 ### Diseño de la Interfaz de Usuario
 
 #### Prototipo de alta fidelidad general
-Enlace a prototipo en Figma [Figma](https://www.figma.com/file/UZHx1Q3lEVio6PIGTnXYy4/LOL?node-id=0%3A1)
+*Enlace a prototipo en Figma [Figma](https://www.figma.com/file/UZHx1Q3lEVio6PIGTnXYy4/LOL?node-id=0%3A1)
 
-En desktop:
+*En desktop:
 
 ![Vista principal](https://user-images.githubusercontent.com/55217648/109943271-01676980-7ca3-11eb-9b80-c7bfa0488bcc.png)
 ![Vista Champions](https://user-images.githubusercontent.com/55217648/109943388-252aaf80-7ca3-11eb-8d4e-f6ef23909585.png)
@@ -162,7 +162,7 @@ En desktop:
 ![Vista Ranking (1)](https://user-images.githubusercontent.com/55217648/109943754-83f02900-7ca3-11eb-8cbb-d57b49c46cb3.png)
 ![Vista Acerca de](https://user-images.githubusercontent.com/55217648/109943872-a1bd8e00-7ca3-11eb-84b2-6b33de70d066.png)
 
-En mobile:
+*En mobile:
 
 ![Mobile1](https://user-images.githubusercontent.com/55217648/109944129-e6492980-7ca3-11eb-9c61-23a843e82a6e.png)
 ![Mobile2](https://user-images.githubusercontent.com/55217648/109944230-04168e80-7ca4-11eb-8b05-57d82f351d83.png)
