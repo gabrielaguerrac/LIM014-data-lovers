@@ -49,9 +49,10 @@
 
 .modalDialog > section {
     max-width: 800px;
-    width: 90%;
+    width: 50%;
+    height:85%;
     position: relative;
-    margin: 3% auto;
+    margin: 4% auto;
     padding: 20px;
     border-radius: 3px;
     background: black;
@@ -64,13 +65,13 @@
 .modalTitle{
       text-align: center;
       color: white;
-      font-size: 25px;
+      font-size: 24px;
       font-family: 'Crimson Text', serif;
 }
 
 .modalName{
     text-align: center;
-    font-size: 30px;
+    font-size: 27px;
     font-family: 'Cinzel Decorative', cursive;
     color:rgb(241, 204, 111);
 }
@@ -78,7 +79,7 @@
 .modalBlurb,.modalTags, p{
       color: white;
       font-family:'Roboto', sans-serif; 
-      font-size: 16px;
+      font-size: 15px;
 }
 
 
@@ -403,11 +404,10 @@ article:hover{
 
 .modalImg{
     object-fit: cover;
-    width: 90%;
+    width: 100%;
     height: 60%;
     position: relative;
     z-index:1;
-    padding-left:10%;
     align-items:center;   
 }
 
@@ -531,8 +531,8 @@ caption {
     }
 
     article{
-        width: 70%;
-        margin: 2% 15%;
+        width: 30%;
+        margin: 2% 5%;
     }
     
     .checkBtn {
@@ -618,7 +618,13 @@ caption {
         margin: 35%;
     }
 
+    .modalDialog > section {
+        width: 90%;
+    }
    
+    .modalBlurb,.modalTags, p{
+        font-size: 18px;
+  }
     
 }
 
@@ -747,4 +753,18 @@ caption {
         text-align: center;
         
     } */
+
+    
+    .modalDialog > section {
+        width: 90%;
+        height:90%;
+        margin-top: 10%;
+    }
+
+    .modalImg{
+        width: 100%;
+        height: 50%;
+    }
+
+   
 }
