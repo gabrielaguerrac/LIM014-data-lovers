@@ -50,14 +50,17 @@ NICOLE:
   Cuando quieran informarse acerca de los campeones de Lol  (Nic: decidir si poner esto ¨elegirlos de acuerdo a su estrategia de juego.¨o agregar algo más )
 
  ### 2.2 Prototipado
+ #### 2.2.1 Prototipado inicial
+ Parte de nuestro prototipado que fue cambiada de acuerdo a encuesta.
+ 
+ ![tablaestadística inicial](https://user-images.githubusercontent.com/55217648/109942202-f829cd00-7ca1-11eb-8375-e16594552086.png)
 
-NICOLE> añadir imágenes del figma, las iniciales (tabla grande de stats) y tabla final
+ ![Mobile4Estadísticas](https://user-images.githubusercontent.com/55217648/109942623-5e165480-7ca2-11eb-855d-7d9ff55139da.png)
 
-tabla grande(version1) => encuesta => tabla min max (version2) 
-*(el resultado de la encuesta es valores minimos y m'aximos de: hp, attackdamage, armor )
+ #### 2.2.2 Prototipado final
+ En la encuesta realizada los usuarios indicaron que los más importantes stats sean colocados en una tabla en la cual figure el campeón que tenga máximo y mínimo ATTACKDAMAGE, ARMOR y HP.
 
-
-
+![Vista Ranking](https://user-images.githubusercontent.com/55217648/109942840-974ec480-7ca2-11eb-8612-4688a3406b7e.png)
 
 ## 3. Historias de Usuario
 
@@ -148,12 +151,26 @@ a la siguiente (Cumple con Definición de Terminado + Criterios de Aceptación).
 
 ### Diseño de la Interfaz de Usuario
 
-#### Prototipo de baja fidelidad
+#### Prototipo de alta fidelidad general
+*Enlace a prototipo en Figma [Figma](https://www.figma.com/file/UZHx1Q3lEVio6PIGTnXYy4/LOL?node-id=0%3A1)
 
-Durante tu trabajo deberás haber hecho e iterado bocetos (_sketches_) de tu
-solución usando papel y lápiz. Te recomendamos tomar fotos de todas las
-iteraciones que hagas, que las subas a tu repositorio y las menciones en tu
-`README.md`.
+*En desktop:
+
+![Vista principal](https://user-images.githubusercontent.com/55217648/109943271-01676980-7ca3-11eb-9b80-c7bfa0488bcc.png)
+![Vista Champions](https://user-images.githubusercontent.com/55217648/109943388-252aaf80-7ca3-11eb-8d4e-f6ef23909585.png)
+![Vista ChampionsModal](https://user-images.githubusercontent.com/55217648/109943644-67ec8780-7ca3-11eb-8585-bb3fb190a877.png)
+![Vista Ranking (1)](https://user-images.githubusercontent.com/55217648/109943754-83f02900-7ca3-11eb-8cbb-d57b49c46cb3.png)
+![Vista Acerca de](https://user-images.githubusercontent.com/55217648/109943872-a1bd8e00-7ca3-11eb-84b2-6b33de70d066.png)
+
+*En mobile:
+
+![Mobile1](https://user-images.githubusercontent.com/55217648/109944129-e6492980-7ca3-11eb-9c61-23a843e82a6e.png)
+![Mobile2](https://user-images.githubusercontent.com/55217648/109944230-04168e80-7ca4-11eb-8b05-57d82f351d83.png)
+![Mobile3](https://user-images.githubusercontent.com/55217648/109944334-21e3f380-7ca4-11eb-8fba-26b6813066a2.png)
+![Mobile4](https://user-images.githubusercontent.com/55217648/109944580-5d7ebd80-7ca4-11eb-855e-7166781583dc.png)
+![Mobile5](https://user-images.githubusercontent.com/55217648/109944819-9f0f6880-7ca4-11eb-9c0d-e2452277f1d6.png)
+![Mobile6](https://user-images.githubusercontent.com/55217648/109944907-b9e1dd00-7ca4-11eb-80ad-d6c9e4a95fac.png)
+
 
 #### Testeos de usabilidad
 
@@ -161,6 +178,8 @@ Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
 en base a los resultados, deberás iterar tus diseños. Cuéntanos
 qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
 mejoraste en tu propuesta final.
+
+![testLOL](https://user-images.githubusercontent.com/55217648/109946164-f235eb00-7ca5-11eb-8732-415382618310.png)
 
 ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 

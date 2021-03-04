@@ -175,34 +175,21 @@ let attackMax;
 
 newData.forEach((propChamp) => {
 
-  let newObj =(objName,stat) => {
-    objName = {
-      name : propChamp.name,
-      img: propChamp.img,
-      value: propChamp.stats[stat]
-    }
-  }
+ const {name , img, stats } = propChamp;
 
- if(propChamp.stats.hp == hpResult[0]) {
-  return newObj (hpMin,"hp")
- }
- else if(propChamp.stats.hp == hpResult[1]) {
-  newObj (hpMax,"hp")
-}
- else if(propChamp.stats.armor == armorResult[0]) {
-  newObj (armorMin,"armor")
-}
-else if(propChamp.stats.armor == armorResult[1]) {
- newObj (armorMax,"armor")
-}
-else if(propChamp.stats.attackdamage == attackdamageResult[0]) {
-  newObj (attackMin,"attackdamage")
-}
-else if(propChamp.stats.attackdamage == attackdamageResult[1]) {
-  newObj (attackMax,"attackdamage")
-}
+ if(stats.hp == hpResult[0]) {hpMin = { name,img,value: stats.hp }}
+ else if(stats.hp == hpResult[1]) {hpMax = {name,img,value: stats.hp}}
 
+ else if(stats.armor == armorResult[0]) {armorMin = {name,img, value: propChamp.stats.armor}}
+
+ else if(stats.armor == armorResult[1]) {armorMax = { name,img,value: stats.armor}}
+
+ else if(stats.attackdamage == attackdamageResult[0]) {
+  attackMin = { name,img,value: propChamp.stats.attackdamage}}
+
+ else if(propChamp.stats.attackdamage == attackdamageResult[1]) {attackMax = {name,img,value: propChamp.stats.attackdamage}}
 });
+
  //console.log(table.join(""));
   let newTable =  
  `<table class="tableMinMax">
