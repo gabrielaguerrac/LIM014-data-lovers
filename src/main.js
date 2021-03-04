@@ -168,49 +168,38 @@ let armorMin;
 let armorMax;
 let attackMin;
 let attackMax;
+
+//OBJETO para tabla
+
+
+
 newData.forEach((propChamp) => {
 
- if(propChamp.stats.hp == hpResult[0]) {
-   hpMin = { 
-    name : propChamp.name,
-    img: propChamp.img,
-    value: propChamp.stats.hp
+  let newObj =(objName,stat) => {
+    objName = {
+      name : propChamp.name,
+      img: propChamp.img,
+      value: propChamp.stats[stat]
     }
+  }
+
+ if(propChamp.stats.hp == hpResult[0]) {
+  return newObj (hpMin,"hp")
  }
  else if(propChamp.stats.hp == hpResult[1]) {
-   hpMax = { 
-    name : propChamp.name,
-    img: propChamp.img,
-    value: propChamp.stats.hp
-    }
+  newObj (hpMax,"hp")
 }
  else if(propChamp.stats.armor == armorResult[0]) {
-  armorMin = { 
-   name : propChamp.name,
-   img: propChamp.img,
-   value: propChamp.stats.armor
-   }
+  newObj (armorMin,"armor")
 }
 else if(propChamp.stats.armor == armorResult[1]) {
-  armorMax = { 
-   name : propChamp.name,
-   img: propChamp.img,
-   value: propChamp.stats.armor
-   }
+ newObj (armorMax,"armor")
 }
 else if(propChamp.stats.attackdamage == attackdamageResult[0]) {
-  attackMin = { 
-   name : propChamp.name,
-   img: propChamp.img,
-   value: propChamp.stats.attackdamage
-   }
+  newObj (attackMin,"attackdamage")
 }
 else if(propChamp.stats.attackdamage == attackdamageResult[1]) {
-  attackMax = { 
-   name : propChamp.name,
-   img: propChamp.img,
-   value: propChamp.stats.attackdamage
-   }
+  newObj (attackMax,"attackdamage")
 }
 
 });
