@@ -23,13 +23,13 @@ Debido a la complejidad y el crecimiento de la comunidad de jugadores de Lol, de
 
 ## 2. Proceso de Diseño
 
- Nuestro proyecto consiste en una página web responsive en la que se podrá visualizar los 134 campeones de Lol, filtrarlos por su Rol, ordenarlos de la a-z y viceversa, así como buscarlos por su nombre. Además, se cree conveniente mostrar el campeón con el valor mínimo y máximo de las estadísticas de mayor relevancia para nuestro público objetivo. También, se añadirá un botón para redirigir al usuario al sitio de descarga de Lol y una sección donde podrán crear su cuenta empezar a jugar.
+ Nuestro proyecto consiste en una página web responsive en la que se podrá visualizar los 134 campeones de Lol, filtrarlos por su Rol, ordenarlos de la a-z y viceversa, así como buscarlos por su nombre. Además, se cree conveniente mostrar el campeón con el valor mínimo y máximo de las estadísticas de mayor relevancia para nuestro público objetivo. También, se añadirá un botón para redirigir al usuario al sitio de descarga de LoL y una sección donde podrán crear su cuenta empezar a jugar.
 
 
  ### 2.1 Definición del Producto 
 
   #### **¿Quiénes son los principales usuarios de producto?**
-  Hombres y mujeres de cualquier edad que sean principiantes o estén interesados en Lol.
+  Hombres y mujeres de cualquier edad que sean principiantes o estén interesados en LoL.
 
   #### **¿Cuáles son los objetivos de estos usuarios en relación con el producto?**
   Usar el producto como fuente de información concisa, relevante y fácil de interpretar sobre los campeones.
@@ -45,7 +45,7 @@ Debido a la complejidad y el crecimiento de la comunidad de jugadores de Lol, de
 
   #### **¿Cuándo utilizan o utilizarían el producto?**
 
-  * Lo utilizarían cuando deseen empezar a jugar LOL, es decir, para que los jugadores novatos tengan una noción básica de aquello que verán en el juego(campeones, roles, información básica de cada campeón, saber el valor mínimo y máximo de los stats más relevantes con sus campeones determinados) y de lo que trata el juego.
+  * Lo utilizarían cuando deseen empezar a jugar LoL, es decir, para que los jugadores novatos tengan una noción básica de aquello que verán en el juego(campeones, roles, información básica de cada campeón, saber el valor mínimo y máximo de los stats más relevantes con sus campeones determinados) y de lo que trata el juego.
   * Lo utilizarán para saber a que campeón escoger según sus características al momento de ingresar al juego.
   * También puede ser utilizado por jugadores experimentados cuando quieran tener información de sus campeones y elegirlos de acuerdo a su estrategia de juego.
 
@@ -68,7 +68,7 @@ Debido a la complejidad y el crecimiento de la comunidad de jugadores de Lol, de
   Luego de realizar nuestro prototipado inicial, realizamos algunos cambios tomando en cuenta el feedback y preguntas realizadas a 4 jugadores de Lol.
   Los cambios fueron:
   * Oscurecer más las imágenes de fondo, para tener una mejor visibilidad del contenido de la página.
-  * Cambiar el filtro desplegado de Roles por un Select, ya que consumía mucho espacio.
+  * Cambiar el filtro desplegado de Roles por un select, ya que consumía mucho espacio.
   * Cambiar el botón de "descargar juego" en la vista inicial por uno que redirija a nuestra vista de Campeones, y de esta forma no desviar al público a una página externa.
   * Agregar un video a la vista de "sobre el juego".
   * Cambiar la tabla de los 19 stats por una tabla con menores stats, ya que muchos de ellos no son muy relevantes para los principiantes en el juego.
