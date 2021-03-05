@@ -251,7 +251,7 @@ a.active, a:hover {
     background-color: rgb(0, 198, 226);
     color:black;
     justify-content: center;
-    font-size: 22px;
+    font-size: 19px;
     border: powderblue 5px solid;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -260,9 +260,10 @@ a.active, a:hover {
     padding: 2%;
     margin-left: 12%;
     margin-bottom: 15%;
-    font-family: 'Crimson Pro';
+    font-family: 'Crimson Text';
+    font-weight: 600 ;
     display: block;
-    width:36%;
+    width:40%;
 }
 
 
@@ -443,10 +444,11 @@ aside> h2{
 }
 
 iframe {
-    width: 560px; 
-    height: 315px;
+    width:40%;
+    height: 425px;
     margin : 3.5%;
     margin-top: 5%;
+    margin-left: 5%;
 }
 
 #imgMap{
@@ -723,10 +725,13 @@ caption {
         width: 48px;
         height: 48px;
     }
-
+    .searchGlass {
+        font-size: 25px;
+    }
     #searchBar {
         display: flex;
-        margin-right: 40px;
+        width: 130px;
+        float: right;
     }
 
     .downloadGame{
@@ -759,10 +764,15 @@ caption {
         
         
     }
+
+    .minMax {
+      margin-top: 25%;
+      margin-bottom: 3%;
+    }
+
     .tableMinMax {
         width: 80%;
         margin: auto;
-        
     }
 
     .aboutLol>aside{
