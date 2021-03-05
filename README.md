@@ -12,7 +12,7 @@
 ## 1. Introducción
 
 
-League of Legends, más conocodp como LOL, es un videojuego del género multijugador de arena de batalla en línea (MOBA) y deporte electrónico lanzado el 2009, el cual fue desarrollado por Riot Games para Microsoft Windows, OS X y para consolas digitales.
+League of Legends, más conocido como LOL, es un videojuego del género multijugador de arena de batalla en línea (MOBA) y deporte electrónico lanzado el 2009, el cual fue desarrollado por Riot Games para Microsoft Windows, OS X y para consolas digitales.
 
 Los jugadores compiten en partidas, que duran entre 15 y 50 minutos en promedio. En cada modo de juego, los equipos trabajan juntos para lograr una condición de victoria, normalmente destruyendo la estructura central en la base del equipo enemigo después de pasar por alto una línea de estructuras defensivas llamadas Torretas. En todos los modos de juego, los jugadores controlan personajes llamados «campeones», elegidos o asignados en cada partida, que tienen un conjunto de habilidades únicas, con los cuales jugarán toda la partida hasta su conclusión. 
 
@@ -21,7 +21,7 @@ Debido a la complejidad y el crecimiento de la comunidad de jugadores de Lol, de
 
 ## 2. Proceso de Diseño
 
- Nuestro proyecto consiste en una página web responsive en la que se podrá visualizar los 134 campeones de Lol, filtrarlos por su Rol, ordenarlos de la a-z y viceversa, así como buscarlos por su nombre. Además, se cree conveniente mostrar el campeón con el valor mínimo y máximo de las estadísticas de mayor relevancia para nuestro público objetivo. También, se añadirá un botón para redirigir al usuario al sitio de descarga de Lol y una sección donde podrán encontrar información precisa sobre el juego.
+ Nuestro proyecto consiste en una página web responsive en la que se podrá visualizar los 134 campeones de Lol, filtrarlos por su Rol, ordenarlos de la a-z y viceversa, así como buscarlos por su nombre. Además, se cree conveniente mostrar el campeón con el valor mínimo y máximo de las estadísticas de mayor relevancia para nuestro público objetivo. También, se añadirá un botón para redirigir al usuario al sitio de descarga de Lol y una sección donde podrán crear su cuenta empezar a jugar.
 
 
  ### 2.1 Definición del Producto 
@@ -43,7 +43,9 @@ Debido a la complejidad y el crecimiento de la comunidad de jugadores de Lol, de
 
   #### **¿Cuándo utilizan o utilizarían el producto?**
 
-  Cuando quieran informarse acerca de los campeones de Lol  (Nic: decidir si poner esto ¨elegirlos de acuerdo a su estrategia de juego.¨o agregar algo más )
+  * Lo utilizarían cuando deseen empezar a jugar LOL, es decir, para que los jugadores novatos tengan una noción básica de aquello que verán en el juego(campeones, roles, información básica de cada campeón, saber el valor mínimo y máximo de los stats más relevantes con sus campeones determinados) y de lo que trata el juego.
+  * Lo utilizarán para saber a que campeón escoger según sus características al momento de ingresar al juego.
+  * También puede ser utilizado por jugadores experimentados cuando quieran tener información de sus campeones y elegirlos de acuerdo a su estrategia de juego.
 
   ### 2.2 Diseño de la Interfaz de Usuario
 
