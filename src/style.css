@@ -642,7 +642,7 @@ caption {
     
 }
 
-@media (min-width: 320px) and (max-width: 767px){
+@media (min-width: 320px) and (max-width: 812px){
     
     body {
         background-image: url(imagenes/CaitlynCel.png);
@@ -714,15 +714,15 @@ caption {
 
     .logoLol, #logoLol{
         width: 90%;
-        height: 60%;
+        height: 70%;
         display:flex;
         flex-direction: column;
-        margin-top: 30%;
+        margin-top: 60%;
         margin-left:4%;
     }
 
     .lolBtn, #lolIcon{
-        width: 48px;
+        width: 50px;
         height: 48px;
     }
     .searchGlass {
@@ -734,11 +734,11 @@ caption {
         float: right;
     }
 
-    .downloadGame{
-        display: flex;
-        justify-content: center;
-        font-size:10px;
-        padding:1.5%;
+    .downloadGame a{
+        margin-left: 27%;
+        font-size: 15px;
+        margin-bottom: 27%;
+        width: 50%;
     }
 
     .notFoundSearch{
