@@ -49,7 +49,6 @@ export const orderChampions = (data, sortBy, sortOrder) => {
 export const computeStats =  (data) => {
     // console.log(data);
 
-//PARA SACAR MIN Y MAX 1 SOLO VALOR NO TOP 3
   // function minMax(data) {
     return data.reduce((acc, val) => {
       //console.log(acc[0]);

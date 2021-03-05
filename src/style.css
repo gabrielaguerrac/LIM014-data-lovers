@@ -642,7 +642,7 @@ caption {
     
 }
 
-@media (min-width: 320px) and (max-width: 812px){
+@media (min-width: 320px) and (max-width: 768px){
     
     body {
         background-image: url(imagenes/CaitlynCel.png);
