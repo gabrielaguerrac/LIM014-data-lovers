@@ -792,6 +792,7 @@ caption {
         margin-right: 20%;
         padding-top: 8%;
         padding-bottom: 10%;
+        flex-direction: column;
                
        
     }
