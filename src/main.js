@@ -168,6 +168,11 @@ let armorMin;
 let armorMax;
 let attackMin;
 let attackMax;
+
+//OBJETO para tabla
+
+
+
 newData.forEach((propChamp) => {
 
  const {name , img, stats } = propChamp;
