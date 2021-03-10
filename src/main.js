@@ -195,12 +195,10 @@ newData.forEach((propChamp) => {
   <tr> 
   <caption> ATTACKDAMAGE </caption>
   </tr>
-
   <tr class = "headerMinMax">
     <th>MÍNIMO</th>
     <th>MÁXIMO</th>
   </tr>
-
   <tr>
     <td class="tableNames">${attackMin.name}</td>
     <td class="tableNames">${attackMax.name}</td>
@@ -210,24 +208,20 @@ newData.forEach((propChamp) => {
     <td><img src=${attackMin.img}></img></td> 
     <td><img src=${attackMax.img}></img></td> 
   </tr>
-
   <tr>
     <td>${attackMin.value}</td>
     <td>${attackMax.value}</td>
   </tr>
-
  </table>
  <br>
  <table class="tableMinMax">
   <tr> 
   <caption> ARMOR </caption>
   </tr>
-
   <tr class = "headerMinMax">
     <th>MÍNIMO</th>
     <th>MÁXIMO</th>
   </tr>
-
   <tr>
     <td class="tableNames">${armorMin.name}</td>
     <td class="tableNames">${armorMax.name}</td>
@@ -237,24 +231,20 @@ newData.forEach((propChamp) => {
     <td><img src=${armorMin.img}></img></td> 
     <td><img src=${armorMax.img}></img></td> 
   </tr>
-
   <tr>
     <td>${armorMin.value}</td>
     <td>${armorMax.value}</td>
   </tr>
-
  </table>
  <br>
  <table class="tableMinMax">
   <tr> 
   <caption> HP </caption>
   </tr>
-
   <tr class = "headerMinMax">
     <th>MÍNIMO</th>
     <th>MÁXIMO</th>
   </tr>
-
   <tr>
     <td class="tableNames">${hpMin.name}</td>
     <td class="tableNames">${hpMax.name}</td>
@@ -264,12 +254,10 @@ newData.forEach((propChamp) => {
     <td><img src=${hpMin.img}></img></td> 
     <td><img src=${hpMax.img}></img></td> 
   </tr>
-
   <tr>
     <td>${hpMin.value}</td>
     <td>${hpMax.value}</td>
   </tr>
-
  </table>`
  document.getElementById("minMax").innerHTML = newTable;
 }
@@ -298,5 +286,3 @@ document.getElementById("lolIcon").addEventListener("click",
 function(){
     location.reload();
 });
-
-
