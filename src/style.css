@@ -39,7 +39,8 @@
     transition: opacity 100ms ease-in;
     pointer-events: none;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    
+    -ms-transition: opacity 100ms ease-in;
+    -o-transition: opacity 100ms ease-in;
 }
 
 .modalDialog:target {
