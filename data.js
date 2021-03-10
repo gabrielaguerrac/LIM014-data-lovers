@@ -6,8 +6,6 @@ data.filter(({tags}) => tags.includes(condition));
 
 
 export const orderChampions = (data, sortBy, sortOrder) => {
-
-  
   //console.log(data)
   if ( sortOrder == "aZ"){
     const result = data.sort((a,b)=>{
@@ -72,7 +70,7 @@ export const orderChampions = (data, sortBy, sortOrder) => {
 
 export const computeStats =  (data) => {
     // console.log(data);
-  data = [10,3,5];
+
   // function minMax(data) {
     return data.reduce((acc, val) => {
       //console.log(acc[0]);
